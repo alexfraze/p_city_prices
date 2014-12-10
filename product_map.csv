@@ -1,0 +1,238 @@
+retailer	url	product	unit_size	total_units	single_size	multi_size
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1331&variation_id=&currency_id=&attribute%5B528%5D=152&qty%5B%5D=1&w=getProductAttributeDetails	Synephrine	g	30	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1331&variation_id=&currency_id=&attribute%5B528%5D=153&qty%5B%5D=1&w=getProductAttributeDetails	Synephrine	g	60	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1331&variation_id=&currency_id=&attribute%5B528%5D=154&qty%5B%5D=1&w=getProductAttributeDetails	Synephrine	g	90	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1349&variation_id=&currency_id=&attribute%5B414%5D=128&qty%5B%5D=1&w=getProductAttributeDetails	L-Theanine	g	30	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1349&variation_id=&currency_id=&attribute%5B414%5D=133&qty%5B%5D=1&w=getProductAttributeDetails	L-Theanine	g	60	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1349&variation_id=&currency_id=&attribute%5B414%5D=129&qty%5B%5D=1&w=getProductAttributeDetails	L-Theanine	g	125	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1349&variation_id=&currency_id=&attribute%5B414%5D=130&qty%5B%5D=1&w=getProductAttributeDetails	L-Theanine	g	250	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1349&variation_id=&currency_id=&attribute%5B414%5D=131&qty%5B%5D=1&w=getProductAttributeDetails	L-Theanine	g	500	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1349&variation_id=&currency_id=&attribute%5B414%5D=132&qty%5B%5D=1&w=getProductAttributeDetails	L-Theanine	g	1000	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1297&variation_id=&currency_id=&attribute%5B412%5D=128&qty%5B%5D=1&w=getProductAttributeDetails	Phenibut	g	30	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1297&variation_id=&currency_id=&attribute%5B412%5D=133&qty%5B%5D=1&w=getProductAttributeDetails	Phenibut	g	60	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1297&variation_id=&currency_id=&attribute%5B412%5D=129&qty%5B%5D=1&w=getProductAttributeDetails	Phenibut	g	125	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1297&variation_id=&currency_id=&attribute%5B412%5D=130&qty%5B%5D=1&w=getProductAttributeDetails	Phenibut	g	250	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1297&variation_id=&currency_id=&attribute%5B412%5D=131&qty%5B%5D=1&w=getProductAttributeDetails	Phenibut	g	500	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1297&variation_id=&currency_id=&attribute%5B412%5D=132&qty%5B%5D=1&w=getProductAttributeDetails	Phenibut	g	1000	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1030&variation_id=&currency_id=&attribute%5B411%5D=124&qty%5B%5D=1&w=getProductAttributeDetails	Choline Bitartrate	g	125	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1030&variation_id=&currency_id=&attribute%5B411%5D=125&qty%5B%5D=1&w=getProductAttributeDetails	Choline Bitartrate	g	250	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1030&variation_id=&currency_id=&attribute%5B411%5D=126&qty%5B%5D=1&w=getProductAttributeDetails	Choline Bitartrate	g	500	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1030&variation_id=&currency_id=&attribute%5B411%5D=127&qty%5B%5D=1&w=getProductAttributeDetails	Choline Bitartrate	g	1000	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1367&variation_id=&currency_id=&attribute%5B237%5D=81&qty%5B%5D=1&w=getProductAttributeDetails	Agmatine Sulfate	g	125	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1367&variation_id=&currency_id=&attribute%5B237%5D=82&qty%5B%5D=1&w=getProductAttributeDetails	Agmatine Sulfate	g	250	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1367&variation_id=&currency_id=&attribute%5B237%5D=83&qty%5B%5D=1&w=getProductAttributeDetails	Agmatine Sulfate	g	500	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1367&variation_id=&currency_id=&attribute%5B237%5D=84&qty%5B%5D=1&w=getProductAttributeDetails	Agmatine Sulfate	g	1000	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1039&variation_id=&currency_id=&attribute%5B464%5D=121&qty%5B%5D=1&w=getProductAttributeDetails	Creatine Monohydrate 	g	500	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1039&variation_id=&currency_id=&attribute%5B464%5D=122&qty%5B%5D=1&w=getProductAttributeDetails	Creatine Monohydrate 	g	1000	True	None
+hardrhino	http://hardrhino.com/remote.php?action=add&product_id=1039&variation_id=&currency_id=&attribute%5B464%5D=142&qty%5B%5D=1&w=getProductAttributeDetails	Creatine Monohydrate 	g	5000	True	None
+liftmode	https://liftmode.com/noopepttm-gvs-111-5-grams-0-18-oz-98-pure-fblm.html	Noopept	g	5	True	None
+liftmode	https://liftmode.com/noopepttm-gvs-111-10-grams-0-35-oz-98-pure-fblm.html	Noopept	g	10	True	None
+liftmode	https://liftmode.com/noopepttm-gvs-111-20-grams-0-35-oz-98-pure-fblm.html	Noopept	g	20	True	None
+liftmode	https://liftmode.com/l-theanine-50-grams-1-76-oz-99-pure-fblm.html	L Theanine	g	50	True	None
+liftmode	https://liftmode.com/l-theanine-100-grams-3-53-oz-99-pure-fblm.html	L Theanine	g	100	True	None
+liftmode	https://liftmode.com/l-theanine-100-grams-7-05-oz-99-pure-fblm.html	L Theanine	g	200	True	None
+liftmode	https://liftmode.com/phenibut-crystal-granules-40-grams-1-41-oz-99-8-pure-fblm.html	Phenibut	g	40	True	None
+liftmode	https://liftmode.com/phenibut-crystal-granules-100-grams-3-53-oz-99-8-pure.html	Phenibut	g	100	True	None
+liftmode	https://liftmode.com/phenibut-crystal-granules-200-grams-7-05-oz-99-8-pure.html	Phenibut	g	200	True	None
+liftmode	https://liftmode.com/phenibut-crystal-granules-500-grams-17-64-oz-99-8-pure.html	Phenibut	g	500	True	None
+liftmode	https://liftmode.com/phenibut-crystal-granules-1000-grams-35-27-oz-99-5-pure-fblm.html	Phenibut	g	1000	True	None
+liftmode	https://liftmode.com/caffeine-natural-400-grams-14-11-oz-99-pure-fblm.html	Caffeine	g	400	True	None
+liftmode	https://liftmode.com/phenylpiracetam-carphedon-5-grams-0-18-oz-99-pure-fblm.html	Phenylpiracetam	g	5	True	None
+liftmode	https://liftmode.com/phenylpiracetam-carphedon-10-grams-0-35-oz-99-pure-fblm.html	Phenylpiracetam	g	10	True	None
+liftmode	https://liftmode.com/phenylpiracetam-carphedon-20-grams-0-71-oz-99-pure-fblm.html	Phenylpiracetam	g	20	True	None
+liftmode	https://liftmode.com/choline-bitartrate-400-grams-14-11-oz-99-pure-fblm.html	Choline Bitartrate	g	400	True	None
+newmind	https://newmind.com/aniracetam-50-grams-99.html	Aniracetam	g	50	True	None
+newmind	https://newmind.com/aniracetam-100-grams-99.html	Aniracetam	g	100	True	None
+newmind	https://newmind.com/aniracetam-200-grams-99.html	Aniracetam	g	200	True	None
+newmind	https://newmind.com/aniracetam-400-grams-99.html	Aniracetam	g	400	True	None
+newmind	https://newmind.com/coluracetam-220.html	Coluracetam	g	1	True	None
+newmind	https://newmind.com/coluracetam-221.html	Coluracetam	g	3	True	None
+newmind	https://newmind.com/coluracetam-219.html	Coluracetam	g	6	True	None
+newmind	https://newmind.com/noopept.html	noopept	g	5	True	None
+newmind	https://newmind.com/noopept-10-grams-98.html	noopept	g	10	True	None
+newmind	https://newmind.com/noopept-20-grams-98.html	noopept	g	20	True	None
+newmind	https://newmind.com/noopept-50-grams-98.html	noopept	g	50	True	None
+newmind	https://newmind.com/noopept-100-grams-98.html	noopept	g	100	True	None
+newmind	https://newmind.com/oxiracetam.html	oxiracetam	g	50	True	None
+newmind	https://newmind.com/phenylpiracetam-487.html	phenylpiracetam	g	5	True	None
+newmind	https://newmind.com/phenylpiracetam-489.html	phenylpiracetam	g	10	True	None
+newmind	https://newmind.com/phenylpiracetam-490.html	phenylpiracetam	g	20	True	None
+newmind	https://newmind.com/phenylpiracetam-488.html	phenylpiracetam	g	50	True	None
+newmind	https://newmind.com/phenylpiracetam-491.html	phenylpiracetam	g	100	True	None
+newmind	https://newmind.com/piracetam-200-grams-99.html	piracetam	g	200	True	None
+newmind	https://newmind.com/piracetam-500-grams-99.html	piracetam	g	500	True	None
+newmind	https://newmind.com/piracetam-1000-grams-99.html	piracetam	g	1000	True	None
+newmind	https://newmind.com/unifiram-155.html	unifiram	g	0.3	True	None
+newmind	https://newmind.com/unifiram.html	unifiram	g	1	True	None
+newmind	https://newmind.com/unifiram-156.html	unifiram	g	3	True	None
+newstarnootropics	https://www.newstarnootropics.com/aniracetam	aniracetam	g	25, 50, 100, 200, 400	None	True
+newstarnootropics	https://www.newstarnootropics.com/noopept	noopept	g	1, 2.5, 5, 10, 20, 40, 100, 200	None	True
+newstarnootropics	https://www.newstarnootropics.com/oxiracetam	oxiracetam	g	10, 25	None	True
+newstarnootropics	https://www.newstarnootropics.com/phenylpiracetam	phenylpiracetam	g	2.5, 5, 10	None	True
+newstarnootropics	https://www.newstarnootropics.com/piracetam	piracetam	g	30, 100, 200, 500, 1000	None	True
+newstarnootropics	https://www.newstarnootropics.com/pramiracetam	pramiracetam	g	5	None	True
+newstarnootropics	https://www.newstarnootropics.com/coluracetam	coluracetam	g	.25, .5, 1, 2, 5, 10, 20	None	True
+newstarnootropics	https://www.newstarnootropics.com/prl853	prl853	g	.25, .5, 1	None	True
+newstarnootropics	https://www.newstarnootropics.com/unifiram	unifiram	g	.25, .5, 1, 2, 5, 10	None	True
+newstarnootropics	https://www.newstarnootropics.com/idra21	idra21	g	.25, .5, 1, 2, 5, 10, 20, 30	None	True
+newstarnootropics	https://www.newstarnootropics.com/fasoracetam	fasoracetam	g	.25, .5, 1, 2, 5, 10	None	True
+nootropicscity	http://nootropicscity.com/product/noopept-capsules-sample-pack-30-capsules-10-mg/	noopept	g	0.3	True	None
+nootropicscity	http://nootropicscity.com/product/noopept-capsules/	noopept	g	0.9	True	None
+nootropicscity	http://nootropicscity.com/product/l-theanine-capsules-sample-pack-30-capsules-300-mg/	L Theanine	g	9	True	None
+nootropicscity	http://nootropicscity.com/product/l-theanine-capsules/	L Theanine	g	27	True	None
+nootropicscity	http://nootropicscity.com/product/piracetam-capsules-sample-pack-45-capsules-800-mg/	Piracetam	g	36	True	None
+nootropicscity	http://nootropicscity.com/product/piracetam-capsules/	Piracetam	g	72	True	None
+nootropicscity	http://nootropicscity.com/product/aniracetam-capsules-sample-pack-30-capsules-700-mg/	Aniracetam	g	21	True	None
+nootropicscity	http://nootropicscity.com/product/aniracetam-capsules/	Aniracetam	g	63	True	None
+nootropicscity	http://nootropicscity.com/product/phenylpiracetam-capsules-100mg/	Phenylpiracetam	g	3	True	None
+nootropicscity	http://nootropicscity.com/product/phenylpiracetam-capsules/	Phenylpiracetam	g	18	True	None
+nootropicscity	http://nootropicscity.com/product/phenibut-capsules-sample-pack-20-capsules-500-mg/	Phenibut	g	10	True	None
+nootropicscity	http://nootropicscity.com/product/phenibut-capsules/	Phenibut	g	45	True	None
+nootropicscity	http://nootropicscity.com/product/adrafinil-capsules-sample-pack-x2/	Adrafinil	g	24	True	2pack?
+nootropicscity	http://nootropicscity.com/product/cdp-choline-citicoline-capsules-sample-pack-10-capsules-250-mg/	CDP Choline Citicoline	g	2.5	True	None
+nootropicscity	http://nootropicscity.com/product/cdp-choline-citicoline-capsules/	CDP Choline Citicoline	g	15	True	None
+nootropicscity	http://nootropicscity.com/product/galantamine-capsules-sample-pack-20-capsules-8-mg/	Galantamine	g	0.16	True	None
+nootropicscity	http://nootropicscity.com/product/galantamine-capsules/	Galantamine	g	0.72	True	None
+newstarnootropics	https://www.newstarnootropics.com/phenylpiracetam	noopept	g	1	True	None
+newstarnootropics	https://www.newstarnootropics.com/piracetam	l theanine	g	20	True	None
+newstarnootropics	https://www.newstarnootropics.com/pramiracetam	phenibut	g	100	True	None
+newstarnootropics	https://www.newstarnootropics.com/coluracetam	alpha gpc choline	g	50	True	None
+newstarnootropics	https://www.newstarnootropics.com/prl853	acetyl l carnitine	g	500	True	None
+newstarnootropics	https://www.newstarnootropics.com/unifiram	acetyl l carnitine	g	1000	True	None
+newstarnootropics	https://www.newstarnootropics.com/idra21	caffeine anhydrous	g	400	True	None
+newstarnootropics	https://www.newstarnootropics.com/fasoracetam	oxiracetam	g	50	True	None
+nootropicscity	http://nootropicscity.com/product/noopept-capsules-sample-pack-30-capsules-10-mg/	citicoline cdp choline	g	25	True	None
+nootropicscity	http://nootropicscity.com/product/noopept-capsules/	bacopa monieri	g	75	True	None
+nootropicscity	http://nootropicscity.com/product/l-theanine-capsules-sample-pack-30-capsules-300-mg/	5 htp	g	20	True	None
+nootropicscity	http://nootropicscity.com/product/l-theanine-capsules/	beta alanine	g	200	True	None
+nootropicscity	http://nootropicscity.com/product/piracetam-capsules-sample-pack-45-capsules-800-mg/	beta alanine	g	1000	True	None
+nootropicscity	http://nootropicscity.com/product/piracetam-capsules/	phenylpiracetam carphedon	g	5	True	None
+nootropicscity	http://nootropicscity.com/product/aniracetam-capsules-sample-pack-30-capsules-700-mg/	amp citrate	g	25	True	None
+nootropicscity	http://nootropicscity.com/product/aniracetam-capsules/	l glutamine	g	1000	True	None
+nootropicscity	http://nootropicscity.com/product/phenylpiracetam-capsules-100mg/	l glutamine	g	100	True	None
+nootropicscity	http://nootropicscity.com/product/phenylpiracetam-capsules/	l glutamine	g	400	True	None
+nootropicscity	http://nootropicscity.com/product/phenibut-capsules-sample-pack-20-capsules-500-mg/	phenibut	g	18	True	None
+nootropicscity	http://nootropicscity.com/product/phenibut-capsules/	citruline malate	g	200	True	None
+nootropicscity	http://nootropicscity.com/product/adrafinil-capsules-sample-pack-x2/	citruline malate	g	75	True	None
+nootropicscity	http://nootropicscity.com/product/cdp-choline-citicoline-capsules-sample-pack-10-capsules-250-mg/	5 htp	g	20	True	None
+nootropicscity	http://nootropicscity.com/product/cdp-choline-citicoline-capsules/	sulbutiamine	g	20	True	None
+nootropicscity	http://nootropicscity.com/product/galantamine-capsules-sample-pack-20-capsules-8-mg/	sulbutiamine	g	20	True	None
+nootropicscity	http://nootropicscity.com/product/galantamine-capsules/	cdp choline	g	24	True	None
+nootropicscity	http://nootropicsdepot.com/remote.php?action=add&product_id=170&variation_id=&currency_id=&attribute%5B217%5D=75&qty%5B%5D=1&w=getProductAttributeDetails	alpha gpc	g	9	True	None
+nootropicscity	http://nootropicsdepot.com/remote.php?action=add&product_id=170&variation_id=&currency_id=&attribute%5B217%5D=76&qty%5B%5D=1&w=getProductAttributeDetails	picamilon	g	25	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=170&variation_id=&currency_id=&attribute%5B217%5D=75&qty%5B%5D=1&w=getProductAttributeDetails	L-Theanine	g	30	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=170&variation_id=&currency_id=&attribute%5B217%5D=76&qty%5B%5D=1&w=getProductAttributeDetails	L-Theanine	g	125	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=170&variation_id=&currency_id=&attribute%5B217%5D=77&qty%5B%5D=1&w=getProductAttributeDetails	L-Theanine	g	500	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=170&variation_id=&currency_id=&attribute%5B217%5D=78&qty%5B%5D=1&w=getProductAttributeDetails	L-Theanine	g	1000	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=169&variation_id=&currency_id=&attribute%5B218%5D=86&qty%5B%5D=1&w=getProductAttributeDetails	CDP Choline	g	30	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=169&variation_id=&currency_id=&attribute%5B218%5D=87&qty%5B%5D=1&w=getProductAttributeDetails	CDP Choline	g	60	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=169&variation_id=&currency_id=&attribute%5B218%5D=88&qty%5B%5D=1&w=getProductAttributeDetails	CDP Choline	g	125	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=169&variation_id=&currency_id=&attribute%5B218%5D=89&qty%5B%5D=1&w=getProductAttributeDetails	CDP Choline	g	250	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=166&variation_id=&currency_id=&attribute%5B224%5D=122&qty%5B%5D=1&w=getProductAttributeDetails	Choline Bitartrate	g	125	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=166&variation_id=&currency_id=&attribute%5B224%5D=123&qty%5B%5D=1&w=getProductAttributeDetails	Choline Bitartrate	g	500	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=166&variation_id=&currency_id=&attribute%5B224%5D=124&qty%5B%5D=1&w=getProductAttributeDetails	Choline Bitartrate	g	1000	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=174&variation_id=&currency_id=&attribute%5B230%5D=86&qty%5B%5D=1&w=getProductAttributeDetails	Alpha GPC	g	30	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=174&variation_id=&currency_id=&attribute%5B230%5D=87&qty%5B%5D=1&w=getProductAttributeDetails	Alpha GPC	g	60	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=174&variation_id=&currency_id=&attribute%5B230%5D=88&qty%5B%5D=1&w=getProductAttributeDetails	Alpha GPC	g	125	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=174&variation_id=&currency_id=&attribute%5B230%5D=89&qty%5B%5D=1&w=getProductAttributeDetails	Alpha GPC	g	250	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=173&variation_id=&currency_id=&attribute%5B227%5D=82&qty%5B%5D=1&w=getProductAttributeDetails	ALCAR	g	125	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=173&variation_id=&currency_id=&attribute%5B227%5D=83&qty%5B%5D=1&w=getProductAttributeDetails	ALCAR	g	250	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=173&variation_id=&currency_id=&attribute%5B227%5D=84&qty%5B%5D=1&w=getProductAttributeDetails	ALCAR	g	500	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=173&variation_id=&currency_id=&attribute%5B227%5D=85&qty%5B%5D=1&w=getProductAttributeDetails	ALCAR	g	1000	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=185&variation_id=&currency_id=&attribute%5B251%5D=127&qty%5B%5D=1&w=getProductAttributeDetails	Creatine Monohydrate	g	500	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=185&variation_id=&currency_id=&attribute%5B251%5D=128&qty%5B%5D=1&w=getProductAttributeDetails	Creatine Monohydrate	g	1000	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=185&variation_id=&currency_id=&attribute%5B251%5D=129&qty%5B%5D=1&w=getProductAttributeDetails	Creatine Monohydrate	g	5000	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=186&variation_id=&currency_id=&attribute%5B252%5D=82&qty%5B%5D=1&w=getProductAttributeDetails	Ashwagandha	g	125	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=186&variation_id=&currency_id=&attribute%5B252%5D=83&qty%5B%5D=1&w=getProductAttributeDetails	Ashwagandha	g	250	True	None
+nootropicsdepot	http://nootropicsdepot.com/remote.php?action=add&product_id=186&variation_id=&currency_id=&attribute%5B252%5D=84&qty%5B%5D=1&w=getProductAttributeDetails	Ashwagandha	g	500	True	None
+peaknootropics	http://peaknootropics.com/shop/piracetam/	piracetam	g	500, 1000	None	True
+peaknootropics	http://peaknootropics.com/shop/noopept/	noopept	g	10, 20, 40	None	True
+peaknootropics	http://peaknootropics.com/shop/aniracetam/	aniracetam	g	50, 100	None	True
+peaknootropics	http://peaknootropics.com/shop/alpha-gpc/	Alpha GPC	g	50, 100	None	True
+peaknootropics	http://peaknootropics.com/shop/cdp-choline/	cdP Choline	g	50, 100	None	True
+peaknootropics	http://peaknootropics.com/shop/oxiracetam/	oxiracetam	g	50, 100	None	True
+peaknootropics	http://peaknootropics.com/shop/pramiracetam/	pramiracetam	g	50, 100	None	True
+peaknootropics	http://peaknootropics.com/shop/phenylpiracetam/	phenylpiracetam	g	10	True	None
+peaknootropics	http://peaknootropics.com/shop/phenibut/	phenibut	g	50	True	None
+peaknootropics	http://peaknootropics.com/shop/sulbutiamine/	sulbutiamine	g	50	True	None
+peaknootropics	http://peaknootropics.com/shop/alcar/	alCAR	g	100, 200	None	True
+peaknootropics	http://peaknootropics.com/shop/l-theanine/	l Theanine	g	50, 100	None	True
+powdercity	http://www.powdercity.com/products/noopept	noopept	g	1, 5, 10, 25, 100	None	True
+powdercity	http://www.powdercity.com/products/l-theanine	l Theanine	g	10, 20, 100, 500	None	True
+powdercity	http://www.powdercity.com/products/phenibut	phenibut	g	25, 100, 125, 250, 500, 1000	None	True
+powdercity	http://www.powdercity.com/products/piracetam-powder	piracetam	g	125, 250, 500, 1000	None	True
+powdercity	http://www.powdercity.com/products/alpha-gpc	Alpha GPC	g	10, 50, 100, 250	None	True
+powdercity	http://www.powdercity.com/products/aniracetam	aniracetam	g	10, 30, 100, 500, 1000	None	True
+powdercity	http://www.powdercity.com/products/noopept-capsules	noopept capsules	g	.3, .9	None	True
+powdercity	http://www.powdercity.com/products/acetyl-l-carnitine-powder-alcar	acetyl l carnitine	g	50, 100, 250, 500, 1000	None	True
+powdercity	http://www.powdercity.com/products/caffeine-anhydrous	caffeine anhydrous	g	10, 50, 100, 500, 1000, 5000, 20000	None	True
+powdercity	http://www.powdercity.com/products/phenylpiracetam	phenylpiracetam	g	1, 5, 10, 25	None	True
+powdercity	http://www.powdercity.com/products/oxiracetam	oxiracetam	g	25, 50, 100, 250	None	True
+powdercity	http://www.powdercity.com/products/n-acetyl-l-tyrosine	N-acetyl-l-tyrosine	g	25, 50, 100, 1000	None	True
+powdercity	http://www.powdercity.com/products/choline-cdp	choline cdp	g	10, 25, 50, 100, 250	None	True
+powdercity	http://www.powdercity.com/products/choline-bitartrate	choline Bitartrate	g	100, 500, 1000	None	True
+powdercity	http://www.powdercity.com/products/pramiracetam	pramiracetam	g	1, 5, 10, 25, 50	None	True
+powdercity	http://www.powdercity.com/products/citrulline-malate-bulk-2-1-citral-m	citruline malate	g	125, 250, 500	None	True
+powdercity	http://www.powdercity.com/products/prl-8-53	prl853	g	.25, .5, 1, 2, 5, 10	None	True
+powdercity	http://www.powdercity.com/products/unifiram-dm232	unifiram	g	SOLDOUT	None	True
+powdercity	http://www.powdercity.com/products/idra-21	idra21	g	.25, .5, 1	None	True
+powdercity	http://www.powdercity.com/products/fasoracetam-ns-105	fasoracetam	g	10, 25, 50, 250	None	True
+powdercity	http://www.powdercity.com/products/mucuna-pruriens	mucuna pruriens	g	5, 10, 30, 100	None	True
+powdercity	http://www.powdercity.com/products/synephrine-hcl	synephrine	g	5, 10, 30, 100	None	True
+powdercity	http://www.powdercity.com/products/amp-citrate	amp citrate	g	10, 25, 50, 250	None	True
+powdercity	http://www.powdercity.com/products/bacopa-monnieri-20-bacosides	bacopa monnieri	g	25, 50, 100, 250, 1000	None	True
+powdercity	http://www.powdercity.com/products/citrulline-malate-bulk-2-1-citral-m	citruline malate	g	125, 250, 500	None	True
+powdercity	http://www.powdercity.com/products/creatine-monohydrate	creatine Monohydrate	g	250, 500, 1000, 5000	None	True
+powdercity	http://www.powdercity.com/products/ashwagandha-extract-bulk-powder	ashwagandha	g	50, 100	None	True
+powdercity	http://www.powdercity.com/products/melatonin-powder	melatonin	g	1, 5, 10, 50	None	True
+powdercity	http://www.powdercity.com/products/coluracetam	coluracetam	g	.25, .5, 1, 5	None	True
+powdercity	http://www.powdercity.com/products/5-htp	5 htp	g	10, 50, 100	None	True
+powdercity	http://www.powdercity.com/products/beta-alanine	beta alanine	g	100, 500, 1000	None	True
+powdercity	http://www.powdercity.com/products/cdp-choline-capsules	cdp Choline capsules	g	1200, 2400, 7200	None	True
+powdercity	http://www.powdercity.com/products/l-glutamine	l glutamine	g	5, 50, 100, 250, 500, 1000, 5000	None	True
+powdercity	http://www.powdercity.com/products/phenibut-hcl-capsules	phenibut capsules	g	SOLDOUT	None	True
+powdercity	http://www.powdercity.com/products/sulbutiamine-capsules	sulbutiamine capsules	g	18	None	True
+powdercity	http://www.powdercity.com/products/sulbutiamine-powder	sulbutiamine	g	25, 50, 100	None	True
+powdercity	http://www.powdercity.com/products/mucuna-pruriens-extract-capsules	mucuna pruriens capsules	g	4.5, 9, 27	None	True
+powdercity	http://www.powdercity.com/products/gm-20-1-milligram-digital-scale	20:1 miligram digital scale	g	None	None	True
+powdercity	http://www.powdercity.com/products/empty-gelatin-capsules-500-count	#0 – 500 count gelatin capsules	g	None	None	True
+powdercity	http://www.powdercity.com/products/empty-gelatin-capsules-00-500-count	#00 – 500 count gelatin capsules	g	None	None	True
+bulksupplements	http://www.bulksupplements.com/noopept.html	noopept	g	1, 5, 10, 25, 50	None	True
+bulksupplements	http://www.bulksupplements.com/l-theanine.html	l theanine	g	50, 100, 250, 500, 1000, 5000, 25000	None	True
+bulksupplements	http://www.bulksupplements.com/phenibut.html	phenibut	g	50, 100, 250, 500, 1000	None	True
+bulksupplements	http://www.bulksupplements.com/acetyl-l-carnitine-alcar.html	alcar	g	100, 250, 500, 1000, 5000, 25000	None	True
+bulksupplements	http://www.bulksupplements.com/caffeine-powder-anhydrous.html	caffeine	g	100, 250, 500, 1000, 5000, 25000	None	True
+bulksupplements	http://www.bulksupplements.com/n-acetyl-l-tyrosine-nalt.html	n acetyl l tyrosine	g	100, 250, 500, 1000, 5000, 25000	None	True
+bulksupplements	http://www.bulksupplements.com/choline-bitartrate.html	choline bitartrate	g	100, 250, 500, 1000, 5000, 25000	None	True
+bulksupplements	http://www.bulksupplements.com/l-citrulline-dl-malate-200.html	l citruline dl malate	g	100, 250, 500, 1000, 5000, 25000	None	True
+bulksupplements	http://www.bulksupplements.com/creatine-monohydrate.html	creatine monohydrate	g	250, 500, 1000, 5000, 25000	None	True
+bulksupplements	http://www.bulksupplements.com/melatonin.html	melatonin	g	10, 25, 50, 100, 250, 500, 1000, 5000	None	True
+bulksupplements	http://www.bulksupplements.com/5-htp-griffonia-seed-extract.html	5 htp	g	10, 25, 50, 100, 250, 500, 1000, 5000, 25000	None	True
+bulksupplements	http://www.bulksupplements.com/beta-alanine.html	beta alanine	g	100, 250, 500, 1000, 5000, 25000	None	True
+smartpowders	http://www.smartpowders.com/smart-powders-noopept-10mg-100-cap.html	noopept	g	1	True	None
+smartpowders	http://www.smartpowders.com/l-theanine-powder-20-grams.html	l theanine	g	20	True	None
+smartpowders	http://www.smartpowders.com/phenibut-100-grams.html	phenibut	g	100	True	None
+smartpowders	http://www.smartpowders.com/smart-powders-alpha-gpc-powder-50-choline-50-grams.html	alpha gpc	g	50	True	None
+smartpowders	http://www.smartpowders.com/acetyl-l-carnitine-powder-500-grams.html	alcar	g	500	True	None
+smartpowders	http://www.smartpowders.com/acetyl-l-carnitine-powder-1000-grams.html	alcar	g	1000	True	None
+smartpowders	http://www.smartpowders.com/caffeine-anhydrous-400-grams.html	caffeine	g	400	True	None
+smartpowders	http://www.smartpowders.com/oxiracetam-powder.html	oxiracetam	g	49.6	True	None
+smartpowders	http://www.smartpowders.com/citicoline-cdp-choline-25g-powder.html	citicoline cdp choline	g	25	True	None
+smartpowders	http://www.smartpowders.com/bacopa-monnieri-20-powder-75-grams.html	bacopa	g	75	True	None
+smartpowders	http://www.smartpowders.com/5-htp-20-grams.html	5 htp	g	20	True	None
+smartpowders	http://www.smartpowders.com/smart-powders-beta-alanine-200-grams.html	beta alanine	g	200	True	None
+smartpowders	http://www.smartpowders.com/smart-powders-beta-alanine-200-grams-9475.html	beta alanine	g	200	True	None
+smartpowders	http://www.smartpowders.com/phenylpiracetam-carphedon-5g-bulk-powder.html	carphedon	g	5	True	None
+smartpowders	http://www.smartpowders.com/smart-powders-amp-citrate-25g.html	amp citrate	g	25	True	None
+smartpowders	http://www.smartpowders.com/l-glutamine-powder-1000-grams.html	l glutamine	g	100	True	None
+smartpowders	http://www.smartpowders.com/l-glutamine-powder-100-grams.html	l glutamine	g	100	True	None
+smartpowders	http://www.smartpowders.com/l-glutamine-powder-400-grams.html	l glutamine	g	400	True	None
+smartpowders	http://www.smartpowders.com/phenibut-200mg-90-cap.html	phenibut	g	18	True	None
+smartpowders	http://www.smartpowders.com/citrulline-malate-powder-200-grams.html	citruline malate	g	200	True	None
+smartpowders	http://www.smartpowders.com/citrulline-malate-powder-75-grams.html	citruline malate	g	75	True	None
+smartpowders	http://www.smartpowders.com/5-htp-20-grams.html	5 htp	g	20	True	None
+smartpowders	http://www.smartpowders.com/sulbutiamine-100-caps-200mg.html	sulbutiamine	g	20	True	None
+smartpowders	http://www.smartpowders.com/sulbutiamine-30-grams.html	sulbutiamine	g	30	True	None
+smartpowders	http://www.smartpowders.com/smart-powders-cdp-choline-400mg-60-caps.html	cdp choline	g	24	True	None
+smartpowders	http://www.smartpowders.com/smart-powders-alpha-gpc-150mg-60-caps.html	alpha gpc	g	9	True	None
+smartpowders	http://www.smartpowders.com/picamilon-powder-25g.html	picamilon	g	25	True	None
