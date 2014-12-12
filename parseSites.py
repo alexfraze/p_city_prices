@@ -5,7 +5,7 @@ from site_specific_parsing import returnItemInfoFromHRNDJson
 from site_specific_parsing import returnItemInfoFromMagentoSite
 from site_specific_parsing import returnItemInfoNewStar
 from site_specific_parsing import returnItemInfoPowderCity
-import sys, os
+import sys, os, yaml
 
 # loads as dictionary
 # with open('product_urls','r') as f: data = y.safe_load(f)
@@ -22,7 +22,8 @@ except:
 
 
 class Start(object):
-    def __init__(self, _test): # check test
+    def __init__(self, _test, yaml_file): # check test
+        self.yaml_file = self.returnYamlDict(yaml_file)
         self._test = _test
         self.config()
         self.run()
@@ -54,6 +55,15 @@ class Start(object):
         self.txt_dir = os.getcwd()
         self.download_dir = os.getcwd() # retailer_name/downloaded_pages
         return
+        
+    def returnYamlDict(self, yaml_file):
+        try:
+            with open(yaml_file,'r') as f:
+                data = yaml.load(f)
+            return data
+        except Exception as e:
+            import traceback;print(traceback.format_exc())
+            exit()
 
     def run(self):
         _test_err=[]
@@ -65,9 +75,9 @@ class Start(object):
             dp = os.path.join(self.download_dir, retailer)
             for fn in os.listdir(dp):
                 fp = os.path.join(dp, fn)
-                
                 leadsplit = self.split_dictionary[retailer][0]
                 endsplit = self.split_dictionary[retailer][1]
+                # if _test print out relevant fp and dict info
                 if _test:
                     size = os.stat(fp).st_size
                     r = "\nfn:",fn,"\nfp:",fp,"\nlead_split:",leadsplit,"\nend_split",endsplit, "\nf_size: ", size
@@ -76,7 +86,7 @@ class Start(object):
                     for t in r:
                         print("\nfn:",fn,"\nfp:",fp,"\nlead_split:",leadsplit,"\nend_split",endsplit, "\nf_size: ", size)
                 else:
-                    print(fn)
+                    product_name = fn.replace('_',' ')
                     if retailer is 'hardrhino':
                         _json = returnJsonFromJsonDumpFile(fp)
                         returnItemInfoFromHRNDJson(_json) # change name duplicate
@@ -91,19 +101,21 @@ class Start(object):
                     elif retailer is 'newmind':
                         returnItemInfoFromMagentoSite(fp)
                     elif retailer is 'newstarnootropics':
-                        returnItemInfoNewStar(fp)
+                        proportion_list = returnItemInfoNewStar(fp)
+                        last_proportion_list = self.yaml_file[retailer][product_name]['total_units'].split(', ')
+                        #if proportion_list is last_proportion_list:
+                            #print(proportion_list, last_proportion_list)
                     elif retailer is 'nootropicscity':
                         returnItemInfoFromMagentoSite(fp)
                     elif retailer is 'peaknootropics':
                         returnItemInfoFromMagentoSite(fp)
-                    elif retailer is 'powdercitysingle_urls':
-                        returnItemInfoPowderCity(fp)
-                    elif retailer is 'powdercity_urls':
+                    elif retailer is 'powdercity':
                         returnItemInfoPowderCity(fp)
                     elif retailer is 'smartpowders':
                         returnItemInfoFromMagentoSite(fp)
         if _test:
             print(_test_err)
+        #import pdb;pdb.set_trace()
                     
 if __name__=="__main__":
     Start(_test)

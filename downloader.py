@@ -140,7 +140,7 @@ def run():
     downloadurls(data)
     from parseSites import Start
     _test = False
-    Start(_test)
+    Start(_test, yml_file)
 
 if __name__=="__main__":
     run()
