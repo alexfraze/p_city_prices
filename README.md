@@ -15,7 +15,7 @@ It does however need one more module to convert the scraped prices.
 It reads from the product_map.csv and converts it to yaml. ( ease of 
 migration to MySQL, or future adaptability, price conversion, etc) 
     - The product_map.csv is intended to be a map that contains the
-    conversion prices for PowderCity to each other retailer.
+    conversion prices for main retailer to each other retailer.
     
 It then reads from the yaml file and downloads the urls in parallel. 
     - there is a half second pause between threads so the servers dont
