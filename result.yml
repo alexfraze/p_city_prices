@@ -580,15 +580,15 @@ powdercity:
     multi_size: 'True'
     product: "#0 \u2013 500 count gelatin capsules"
     single_size: None
-    total_units: None
-    unit_size: g
+    total_units: '500'
+    unit_size: unit
     url: http://www.powdercity.com/products/empty-gelatin-capsules-500-count
   "#00 \u2013 500 count gelatin capsules":
     comp_name: COMPNAME
     multi_size: 'True'
     product: "#00 \u2013 500 count gelatin capsules"
     single_size: None
-    total_units: None
+    total_units: '500'
     unit_size: g
     url: http://www.powdercity.com/products/empty-gelatin-capsules-00-500-count
   20:1 miligram digital scale:
@@ -596,7 +596,7 @@ powdercity:
     multi_size: 'True'
     product: 20:1 miligram digital scale
     single_size: None
-    total_units: None
+    total_units: '1'
     unit_size: g
     url: http://www.powdercity.com/products/gm-20-1-milligram-digital-scale
   5 htp:

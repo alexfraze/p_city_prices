@@ -52,7 +52,11 @@ class Start(object):
                     'smartpowders':['magento_based_site',None]
                     }
         # define this to skip parsing
-        self.skip_list = [] #'powdercity_urls','powdercitysingle_urls','peaknootropics','nootropicsdepot','nootropicscity','newstarnootropics','newmind','bulksupplements','hardrhino','liftmode'] # used to skip retailers
+        # used to skip retailers
+        self.skip_list = []#'powdercity_urls','powdercitysingle_urls','peaknootropics',
+                          #'nootropicsdepot','nootropicscity','newstarnootropics','newmind',
+                          #'bulksupplements','hardrhino','liftmode'] #,'liftmode'
+                    
         self.txt_dir = os.getcwd()
         self.download_dir = os.getcwd() # retailer_name/downloaded_pages
         return
@@ -68,14 +72,18 @@ class Start(object):
 
     def run(self):
         _test_err=[]
+        results = []
         # use self.split_dictionary 
         for retailer in self.split_dictionary.keys():
+            name = None
+            price = None
+            items = None
             # retailer in self.skip_list?
             if retailer in self.skip_list:
                 continue
             dp = os.path.join(self.download_dir, retailer)
             for fn in os.listdir(dp):
-                fp = os.path.join(dp, fn)
+                fp = os.path.join(dp, fn)                
                 leadsplit = self.split_dictionary[retailer][0]
                 endsplit = self.split_dictionary[retailer][1]
                 # if _test print out relevant fp and dict info
@@ -88,6 +96,7 @@ class Start(object):
                         print("\nfn:",fn,"\nfp:",fp,"\nlead_split:",leadsplit,"\nend_split",endsplit, "\nf_size: ", size)
                 else:
                     product_name = fn.replace('_',' ')
+                    _multi = self.data[retailer][product_name]['multi_size']
                     if retailer is 'hardrhino':
                         _json = returnJsonFromJsonDumpFile(fp)
                         items = returnItemInfoFromHRNDJson(_json, fp=fp) # change name duplicate
@@ -98,26 +107,39 @@ class Start(object):
                         _json = returnJsonFromBulkSupplements(fp, leadsplit, endsplit)
                         items = returnItemInfoBulkSupplementsJson(_json, fp=fp)
                     elif retailer is 'liftmode':
-                        name, price = returnItemInfoFromMagentoSite(fp)
+                        if _multi is True:
+                            print("THIS SHOULD HAVE MULTIPLE SIZES1")
+                        name, price = returnItemInfoFromMagentoSite(fp, retailer=retailer, _dict=self.data[retailer][product_name])
                     elif retailer is 'newmind':
-                        name, price = returnItemInfoFromMagentoSite(fp)
+                        if _multi is True:
+                            print("THIS SHOULD HAVE MULTIPLE SIZES2")                        
+                        name, price = returnItemInfoFromMagentoSite(fp, retailer=retailer, _dict=self.data[retailer][product_name])
                     elif retailer is 'newstarnootropics':
                         proportion_list = returnItemInfoNewStar(fp)
                         last_proportion_list = self.yaml_file[retailer][product_name]['total_units'].split(', ')
                         #if proportion_list is last_proportion_list:
                             #print(proportion_list, last_proportion_list)
                     elif retailer is 'nootropicscity':
-                        name, price = returnItemInfoFromMagentoSite(fp)
+                        if _multi is True:
+                            print("THIS SHOULD HAVE MULTIPLE SIZES3")                        
+                        name, price = returnItemInfoFromMagentoSite(fp, retailer=retailer, _dict=self.data[retailer][product_name])
                     elif retailer is 'peaknootropics':
-                        name, price = returnItemInfoFromMagentoSite(fp)
+                        if _multi is True:
+                            print("THIS SHOULD HAVE MULTIPLE SIZES4")
+                        name, price = returnItemInfoFromMagentoSite(fp, retailer=retailer, _dict=self.data[retailer][product_name])
                     elif retailer is 'powdercity':
+                        if _multi is True:
+                            print("THIS SHOULD HAVE MULTIPLE SIZES5")
                         name, price = returnItemInfoPowderCity(fp)
                     elif retailer is 'smartpowders':
-                        name, price = returnItemInfoFromMagentoSite(fp)
-                import pdb;pdb.set_trace()
+                        if _multi is True:
+                            print("THIS SHOULD HAVE MULTIPLE SIZES6")             
+                        name, price = returnItemInfoFromMagentoSite(fp, retailer=retailer, _dict=self.data[retailer][product_name])
+                    results.append([retailer, product_name, name, price, items, self.data[retailer][product_name]])
+        import pdb;pdb.set_trace()
         if _test:
             print(_test_err)
-        #import pdb;pdb.set_trace()
+
                     
 if __name__=="__main__":
     Start(_test)

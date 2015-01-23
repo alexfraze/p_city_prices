@@ -4,6 +4,8 @@ from queue import Queue
 import yaml
 import os
 import time
+import sys
+import argparse
 
 def csvtoyaml(in_f, out_f):
     '''
@@ -133,11 +135,16 @@ def readyml(in_f):
         exit()
 
 def run():
+    parser = argparse.ArgumentParser(description="This program scrapes the specified websites contained with the prodcut_map.csv file.")
+    parser.add_argument('-f','--force_download', help="Force the download", action="store_true")
+    args = parser.parse_args()
+
     p_map = 'product_map.csv'
     yml_file = 'result.yml'
     csvtoyaml(p_map, yml_file)
     data = readyml(yml_file)
-    #downloadurls(data) #TODO: add getmtime check for files and skip if less than, or add flag to force
+    if args.force_download:
+        downloadurls(data) #TODO: add getmtime check for files and skip if less than, or add flag to force
     from parseSites import Start
     _test = False
     Start(_test, yml_file, data)
