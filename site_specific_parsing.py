@@ -6,7 +6,8 @@ log = open('log','a+')
 def readFile(fp):
     # if the file is zero length the url fetcher failed
     if os.stat(fp).st_size is 0:
-        raise Exception("[ERROR] File zero length",fp)
+        raise Exception("[ERROR] File zero length: Does the url still exist?" +
+                        " Consider checking the csv file.",fp)
     with open(fp,'r') as f:
         lines = f.read()
     return lines
@@ -15,9 +16,9 @@ def readFile(fp):
 def returnJsonFromBulkSupplements(fp, leadsplit, endsplit):
     try:
         lines = readFile(fp)
-    except:
-        import traceback;log.write(traceback.format_exc())
-        log.write(fp+"\n")
+    except Exception as e:
+        _s = '\n'.join([e.args[0],e.args[1],''])
+        log.write(_s)
         return None
     _json = lines.split(leadsplit)[1].split(endsplit)[0]
     _json = json.loads(_json)
@@ -26,14 +27,14 @@ def returnJsonFromBulkSupplements(fp, leadsplit, endsplit):
 def returnJsonFromJsonDumpFile(fp):
     try:
         _json= readFile(fp)
-    except:
-        import traceback;log.write(traceback.format_exc())
-        log.write(fp+"\n")
+    except Exception as e:
+        _s = '\n'.join([e.args[0],e.args[1],''])
+        log.write(_s)
         return None
     _json = json.loads(_json)
     return _json
 
-def returnItemInfoBulkSupplementsJson(_json):
+def returnItemInfoBulkSupplementsJson(_json, *args, **kwargs):
     '''
     Expects a json.loads(str)
     
@@ -41,28 +42,36 @@ def returnItemInfoBulkSupplementsJson(_json):
     # 'rangeToLabel', 'productAttributes', 'productName', 'priceFromLabel', 'childProducts', 'template', 'basePrice', 
     # 'attributes', 'showPriceRangesInOptions', 'taxConfig', 'productId'])
     '''
+    fp = kwargs['fp']
+    name = None
+    price = None
+    items = []
     for item in _json['attributes']['134']['options']:
         for _id in _json['childProducts'].keys():
                 if _id in item['products'][0]:
                     name = item['label']
                     price = _json['childProducts'][_id]
                     product_id = _id # not used
-                    print('Parsed bulk supplements: ','\n',name, price)
-    return
+                    check_name_price(fp,name,price)
+                    items.append([name,price])
+    return items
     
-def returnItemInfoFromHRNDJson(_json):
+def returnItemInfoFromHRNDJson(_json, *args, **kwargs):
     '''
     print(_json.keys())
     print(_json['details'].keys())
     dict_keys(['details', 'success'])
     dict_keys(['sku', 'thumb', 'purchasable', 'baseThumb', 'unformattedPrice', 'unformattedRrp', 'upc', 'priceLabel', 'price', 'base', 'instock', 'baseImage', 'image', 'rrp'])
     '''
+    fp = kwargs['fp']
+    name = None
+    price = None    
     # name(based on picture name in thumb image), price
     if _json is None:
         return
     name = _json['details']['thumb'].split('/')[-1].split('.')[0].split('__')[0]
     price = _json['details']['price']
-    print('Parsed','\n',name, price)
+    check_name_price(fp,name,price)
     return name,price
 
 def returnItemInfoFromMagentoSite(fp):
@@ -71,9 +80,12 @@ def returnItemInfoFromMagentoSite(fp):
     Magento updates its html with javascript internally and does not post
     any dictionaries/json to the site for their items
     '''
+    name = None
+    price = None
+
     lines = readFile(fp)
     soup = BS(lines)
-    
+    # name
     try:
         product_name = soup.find_all("h1",itemprop="name")
         name = product_name[0].next
@@ -82,29 +94,29 @@ def returnItemInfoFromMagentoSite(fp):
     # nootropicscity uses h2 in their name
     if len(product_name) is 0:
         try:
-            #if fp in '/home/bob/documents/p_city_prices/nootropicscity/Phenylpiracetam':
-                #import pdb;pdb.set_trace()
             product_name = soup.find_all("h2",itemprop="name")
             name = product_name[0].next
         except Exception as e:
-            import traceback;log.write(traceback.format_exc())
-            log.write(fp+"\n")
+            #check_error(e,fp,name=name,price=price,product_name=product_name)
             pass
+    # price        
     try:
         product_price = soup.find("meta",itemprop="price")
         price = product_price.attrs['content']
     except Exception as e:
-        import traceback;log.write(traceback.format_exc())
-        log.write(fp+"\n")
+        #check_error(e,fp,name=name,price=price,product_name=product_name, product_price=product_price)
         pass
 
-    print('Parsed',fp,'\n',name, price)
+    check_name_price(fp,name,price)
     return name, price
 
 def returnItemInfoNewStar(fp):
     '''
     custom site with a weird dropdown menu
     '''
+    name = None
+    price = None
+
     lines = readFile(fp)
     soup = BS(lines, 'html5lib') # malformed tags from html5 javascript use html5lib to sanitize
     products = soup.find_all("option")
@@ -115,14 +127,44 @@ def returnItemInfoNewStar(fp):
         name = item[0]
         price = item[1]
         items.append([name,price])
-        print('Parsed',fp,'\n',name, price)
+        check_name_price(fp,name,price)
     return items
 
 def returnItemInfoPowderCity(fp):
+    name = None
+    price = None
+
     lines = readFile(fp)
     soup = BS(lines)
     name =  soup.find_all("h1", id="product-title")[0].next
     price = soup.find_all("span", itemprop="price")[0].next
-    print('Parsed',fp,'\n',name, price)
+    check_name_price(fp,name,price)
     return name, price
 
+def check_error( e, fp, *args, **kwargs):
+    import pdb;pdb.set_trace()
+
+    return
+
+
+def check_name_price(fp, name, price):
+    # check
+    try:
+        if (name is None) and (price is None):
+            error = 'ITEM MISSING: {0}'.format(fp)
+            print(error)
+            log.write(error+'\n')
+        elif (name is None):
+            error = 'NAME MISSING: {0}'.format(fp)
+            print(error)
+            log.write(error+'\n')            
+        elif (price is None):
+            error = 'Price MISSING: {0}'.format(fp)
+            print(error)
+            log.write(error+'\n')        
+        else:
+            print('Parsed',fp,'\n',name, price)
+            return
+    except:
+        import pdb;pdb.set_trace()
+    return    

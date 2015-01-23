@@ -22,8 +22,9 @@ except:
 
 
 class Start(object):
-    def __init__(self, _test, yaml_file): # check test
+    def __init__(self, _test, yaml_file, data): # check test
         self.yaml_file = self.returnYamlDict(yaml_file)
+        self.data = data
         self._test = _test
         self.config()
         self.run()
@@ -50,7 +51,7 @@ class Start(object):
                     'powdercity':['shopify_based_site',None],
                     'smartpowders':['magento_based_site',None]
                     }
-
+        # define this to skip parsing
         self.skip_list = [] #'powdercity_urls','powdercitysingle_urls','peaknootropics','nootropicsdepot','nootropicscity','newstarnootropics','newmind','bulksupplements','hardrhino','liftmode'] # used to skip retailers
         self.txt_dir = os.getcwd()
         self.download_dir = os.getcwd() # retailer_name/downloaded_pages
@@ -89,30 +90,31 @@ class Start(object):
                     product_name = fn.replace('_',' ')
                     if retailer is 'hardrhino':
                         _json = returnJsonFromJsonDumpFile(fp)
-                        returnItemInfoFromHRNDJson(_json) # change name duplicate
+                        items = returnItemInfoFromHRNDJson(_json, fp=fp) # change name duplicate
                     elif retailer is 'nootropicsdepot':
                         _json = returnJsonFromJsonDumpFile(fp)
-                        returnItemInfoFromHRNDJson(_json) # change name duplicate
+                        items = returnItemInfoFromHRNDJson(_json, fp=fp) # change name duplicate
                     elif retailer is 'bulksupplements':
                         _json = returnJsonFromBulkSupplements(fp, leadsplit, endsplit)
-                        returnItemInfoBulkSupplementsJson(_json)
+                        items = returnItemInfoBulkSupplementsJson(_json, fp=fp)
                     elif retailer is 'liftmode':
-                        returnItemInfoFromMagentoSite(fp)
+                        name, price = returnItemInfoFromMagentoSite(fp)
                     elif retailer is 'newmind':
-                        returnItemInfoFromMagentoSite(fp)
+                        name, price = returnItemInfoFromMagentoSite(fp)
                     elif retailer is 'newstarnootropics':
                         proportion_list = returnItemInfoNewStar(fp)
                         last_proportion_list = self.yaml_file[retailer][product_name]['total_units'].split(', ')
                         #if proportion_list is last_proportion_list:
                             #print(proportion_list, last_proportion_list)
                     elif retailer is 'nootropicscity':
-                        returnItemInfoFromMagentoSite(fp)
+                        name, price = returnItemInfoFromMagentoSite(fp)
                     elif retailer is 'peaknootropics':
-                        returnItemInfoFromMagentoSite(fp)
+                        name, price = returnItemInfoFromMagentoSite(fp)
                     elif retailer is 'powdercity':
-                        returnItemInfoPowderCity(fp)
+                        name, price = returnItemInfoPowderCity(fp)
                     elif retailer is 'smartpowders':
-                        returnItemInfoFromMagentoSite(fp)
+                        name, price = returnItemInfoFromMagentoSite(fp)
+                import pdb;pdb.set_trace()
         if _test:
             print(_test_err)
         #import pdb;pdb.set_trace()

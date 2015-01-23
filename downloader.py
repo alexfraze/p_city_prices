@@ -137,10 +137,10 @@ def run():
     yml_file = 'result.yml'
     csvtoyaml(p_map, yml_file)
     data = readyml(yml_file)
-    downloadurls(data)
+    #downloadurls(data) #TODO: add getmtime check for files and skip if less than, or add flag to force
     from parseSites import Start
     _test = False
-    Start(_test, yml_file)
+    Start(_test, yml_file, data)
 
 if __name__=="__main__":
     run()
