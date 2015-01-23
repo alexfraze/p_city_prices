@@ -111,26 +111,10 @@ def returnItemInfoFromMagentoSite(fp, *args, **kwargs):
     #powdercity
     #bulksupplements # handled seperately
     if _multi is True:
-        _reval = {'peaknootropics': {'units':'[x["value"] for x in soup.find_all("table",class_="variations")[0].find_all("option")]',
-                                     'unit_of_measure': 'soup.find_all("table",class_="variations")[0].find("label").next',
-                                     'prices': 'soup.find_all(attrs={"class": "entry-summary"})[0].find_all("span",class_="amount")'
-                                    },
-                  # 'liftmode': {'units': 'import pdb;pdb.set_trace()',
-                  #              'unit_of_measure': '',
-                  #              'prices': ''
-                  #             },
-                  # 'liftmode': {'units': 'import pdb;pdb.set_trace()',
-                  #              'unit_of_measure': '',
-                  #              'prices': ''
-                  #             },
-                  # 'liftmode': {'units': 'import pdb;pdb.set_trace()',
-                  #              'unit_of_measure': '',
-                  #              'prices': ''
-                  #             },
-                  # 'liftmode': {'units': 'import pdb;pdb.set_trace()',
-                  #              'unit_of_measure': '',
-                  #              'prices': ''
-                  #             },
+        _reval = {'site1': {'units':'[x["value"] for x in soup.find_all("table",class_="variations")[0].find_all("option")]',
+                            'unit_of_measure': 'soup.find_all("table",class_="variations")[0].find("label").next',
+                            'amount': 'soup.find_all(attrs={"class": "entry-summary"})[0].find_all("span",class_="amount")'
+                            },
 
                  }
         try:
