@@ -1,10 +1,4 @@
-from site_specific_parsing import returnJsonFromBulkSupplements
-from site_specific_parsing import returnJsonFromJsonDumpFile
-from site_specific_parsing import returnItemInfoBulkSupplementsJson
-from site_specific_parsing import returnItemInfoFromHRNDJson
-from site_specific_parsing import returnItemInfoFromMagentoSite
-from site_specific_parsing import returnItemInfoNewStar
-from site_specific_parsing import returnItemInfoPowderCity
+from site_specific_parsing import returnItemInfoFromSite
 import sys, os, yaml
 
 # loads as dictionary
@@ -31,31 +25,12 @@ class Start(object):
 
     def config(self):
         '''
-        ---------------------------------------------------
-        # self.split_dictionary = { 'dirname_sitename',[leadsplit, endsplit]}
-        # originally implemented for string based parsing
-        # the only supplier that actually uses it is bulk supplements
-        # #TODO: consider renaming 
-        # but now includes, json, and BS4 parsing as well
-        ---------------------------------------------------
         '''
-        self.split_dictionary = {
-                    'bulksupplements':['Product.Config(',");"],
-                    'hardrhino':['already_json',None],
-                    'nootropicsdepot':['already_json',None], # similar to hardrhino ... almost exactly the same
-                    'liftmode':['magento_based_site',None],
-                    'newmind':['magento_based_site',None],
-                    'newstarnootropics':['custom_site',None],
-                    'nootropicscity':['magento_based_site',None],
-                    'peaknootropics':['magento_based_site',None],
-                    'powdercity':['shopify_based_site',None],
-                    'smartpowders':['magento_based_site',None]
-                    }
         # define this to skip parsing
         # used to skip retailers
-        self.skip_list = []#'powdercity_urls','powdercitysingle_urls','peaknootropics',
-                          #'nootropicsdepot','nootropicscity','newstarnootropics','newmind',
-                          #'bulksupplements','hardrhino','liftmode'] #,'liftmode'
+        self.skip_list = ['powdercity','powdercitysingle', 'peaknootropics',
+                          'nootropicsdepot','newstarnootropics','newmind',
+                          'bulksupplements','hardrhino','liftmode', 'smartpowders'] # 'nootropicscity',
                     
         self.txt_dir = os.getcwd()
         self.download_dir = os.getcwd() # retailer_name/downloaded_pages
@@ -73,8 +48,85 @@ class Start(object):
     def run(self):
         _test_err=[]
         results = []
+        _reval = {'peaknootropics':   {'units':'[x["value"] for x in soup.find_all("table",class_="variations")[0].find_all("option")]', #bs4 returnItemInfoFromMagentoSite
+                                      'unit_of_measure': 'soup.find_all("table",class_="variations")[0].find("label").next',
+                                      'prices': 'soup.find_all(attrs={"class": "entry-summary"})[0].find_all("span",class_="amount")',
+                                      'product_name': 'soup.find_all("h1",itemprop="name")[0].next',
+                                      'price': 'soup.find("meta",itemprop="price").attrs["content"]',
+                                      '_type': 'bs4'
+                                      },
+                  'nootropicscity':   {'units': '', #bs4 returnItemInfoFromMagentoSite h2
+                                      'unit_of_measure': '',
+                                      'prices': '',
+                                      'product_name': 'soup.find_all("h2",itemprop="name")[0].next',
+                                      'price': 'soup.find("meta",itemprop="price").attrs["content"]',
+                                      '_type': 'bs4'
+                                      },
+                  'liftmode':           {'units': [], #bs4 returnItemInfoFromMagentoSite
+                                        'unit_of_measure': '',
+                                        'prices': '',
+                                        'product_name': 'soup.find_all("h1",itemprop="name")[0].next',
+                                        'price': 'soup.find("meta",itemprop="price").attrs["content"]',
+                                        '_type': 'bs4'
+                                        },
+                  'smartpowders':       {'units': '', #bs4 returnItemInfoFromMagentoSite
+                                        'unit_of_measure': '',
+                                        'prices': '',
+                                        'product_name': 'soup.find_all("h1",itemprop="name")[0].next',
+                                        'price': 'soup.find("meta",itemprop="price").attrs["content"]',
+                                        '_type': 'bs4'
+                                        },
+                  'newmind':          {'units': '', #bs4 returnItemInfoFromMagentoSite
+                                       'unit_of_measure': '',
+                                       'prices': '',
+                                       'product_name': 'soup.find_all("h1",itemprop="name")[0].next',
+                                       'price': 'soup.find("meta",itemprop="price").attrs["content"]',
+                                       '_type': 'bs4'
+                                       },
+                  'newstarnootropics':{'units': '', #bs4
+                                       'unit_of_measure': '',
+                                       'prices': '',
+                                       'product_name': '',
+                                       'price': '',
+                                       'products': '[product.text.split(" - ") for product in soup.find_all("option")]',
+                                       '_type': 'bs4'
+                                       },
+                  'powdercity':        {'units': '', #bs4
+                                       'unit_of_measure': '',
+                                       'prices': '',
+                                       'product_name': 'soup.find_all("h1", id="product-title")[0].next',
+                                       'price': 'soup.find_all("span", itemprop="price")[0].next',
+                                       '_type': 'bs4'
+                                       },
+                    #'bulksupplements':['Product.Config(',");"],
+                  'bulksupplements':   {'units': '', #str split
+                                        'unit_of_measure': '',
+                                        'prices': '',
+                                        'product_name': '',
+                                        'price': '',
+                                        'leadsplit': 'Product.Config(',
+                                        'endsplit': ');',
+                                        '_type': 'strsplit'
+                                        },
+                  'nootropicsdepot':  {'units': '', #json
+                                      'unit_of_measure': '',
+                                      'prices': '',
+                                      'product_name': '',
+                                      'price': '',
+                                      '_type': 'json'
+                                      },
+                  'hardrhino':          {'units': '', #json
+                                        'unit_of_measure': '',
+                                        'prices': '',
+                                        'product_name': '',
+                                        'price': '',
+                                      '_type': 'json'
+                                        },
+
+                 }
+
         # use self.split_dictionary 
-        for retailer in self.split_dictionary.keys():
+        for retailer in _reval.keys():
             name = None
             price = None
             items = None
@@ -84,8 +136,6 @@ class Start(object):
             dp = os.path.join(self.download_dir, retailer)
             for fn in os.listdir(dp):
                 fp = os.path.join(dp, fn)                
-                leadsplit = self.split_dictionary[retailer][0]
-                endsplit = self.split_dictionary[retailer][1]
                 # if _test print out relevant fp and dict info
                 if _test:
                     size = os.stat(fp).st_size
@@ -97,49 +147,12 @@ class Start(object):
                 else:
                     product_name = fn.replace('_',' ')
                     _multi = self.data[retailer][product_name]['multi_size']
-                    if retailer is 'hardrhino':
-                        _json = returnJsonFromJsonDumpFile(fp)
-                        items = returnItemInfoFromHRNDJson(_json, fp=fp) # change name duplicate
-                    elif retailer is 'nootropicsdepot':
-                        _json = returnJsonFromJsonDumpFile(fp)
-                        items = returnItemInfoFromHRNDJson(_json, fp=fp) # change name duplicate
-                    elif retailer is 'bulksupplements':
-                        _json = returnJsonFromBulkSupplements(fp, leadsplit, endsplit)
-                        items = returnItemInfoBulkSupplementsJson(_json, fp=fp)
-                    elif retailer is 'liftmode':
-                        if _multi is True:
-                            print("THIS SHOULD HAVE MULTIPLE SIZES1")
-                        name, price = returnItemInfoFromMagentoSite(fp, retailer=retailer, _dict=self.data[retailer][product_name])
-                    elif retailer is 'newmind':
-                        if _multi is True:
-                            print("THIS SHOULD HAVE MULTIPLE SIZES2")                        
-                        name, price = returnItemInfoFromMagentoSite(fp, retailer=retailer, _dict=self.data[retailer][product_name])
-                    elif retailer is 'newstarnootropics':
-                        proportion_list = returnItemInfoNewStar(fp)
-                        last_proportion_list = self.yaml_file[retailer][product_name]['total_units'].split(', ')
-                        #if proportion_list is last_proportion_list:
-                            #print(proportion_list, last_proportion_list)
-                    elif retailer is 'nootropicscity':
-                        if _multi is True:
-                            print("THIS SHOULD HAVE MULTIPLE SIZES3")                        
-                        name, price = returnItemInfoFromMagentoSite(fp, retailer=retailer, _dict=self.data[retailer][product_name])
-                    elif retailer is 'peaknootropics':
-                        if _multi is True:
-                            print("THIS SHOULD HAVE MULTIPLE SIZES4")
-                        name, price = returnItemInfoFromMagentoSite(fp, retailer=retailer, _dict=self.data[retailer][product_name])
-                    elif retailer is 'powdercity':
-                        if _multi is True:
-                            print("THIS SHOULD HAVE MULTIPLE SIZES5")
-                        name, price = returnItemInfoPowderCity(fp)
-                    elif retailer is 'smartpowders':
-                        if _multi is True:
-                            print("THIS SHOULD HAVE MULTIPLE SIZES6")             
-                        name, price = returnItemInfoFromMagentoSite(fp, retailer=retailer, _dict=self.data[retailer][product_name])
+                    _dict = self.data[retailer][product_name]
+                    items = returnItemInfoFromSite(fp,retailer=retailer, _reval=_reval,_multi=_multi, _dict=_dict)
                     results.append([retailer, product_name, name, price, items, self.data[retailer][product_name]])
         import pdb;pdb.set_trace()
         if _test:
             print(_test_err)
-
                     
 if __name__=="__main__":
     Start(_test)
