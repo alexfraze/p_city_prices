@@ -79,7 +79,7 @@ def downloadurls(data):
             result.put(target(*args))
         threads = [threading.Thread(target=task_wrapper, args=[args]) for args in args_list]
         for t in threads:
-            time.sleep(.5)
+            time.sleep(.6)
             t.start()
         for t in threads:
             t.join()
@@ -91,7 +91,7 @@ def downloadurls(data):
         retailer = retailer_dict['retailer']
         url = retailer_dict['url']
         product = retailer_dict['product']
-        r = retailer, product, http.urlopen('GET',url)
+        r = retailer, product, http.urlopen('GET',url), url
         return r
 
     def grabproducts(data, retailer, products):
@@ -111,12 +111,14 @@ def downloadurls(data):
         products = data[retailer]
         downloaded = grabproducts(data, retailer, products)
         results.append(downloaded)
+    page_status_errors = []
     for rq_i, retailer_q in enumerate(results):
         for product_q in results[rq_i].queue:
             retailer_name = product_q[0]
             product_name = product_q[1]
             status = product_q[2].status
             data = product_q[2].data
+            _url = product_q[3]
             directory = retailer_name.replace(' ','_')
             fn = product_name.replace(' ','_')
             if not os.path.exists(directory):
@@ -124,6 +126,23 @@ def downloadurls(data):
             with open(os.path.join(directory, fn),'wb') as f:
                 f.write(data)
             print("Fetched: %s from %s Status: %s" % (product_name, retailer, status))
+            if status is not 200: # aka 404 or 50X
+                page_status_errors.append([{'status':status,'_url':_url,'retailer_name':retailer_name,'product_name':product_name}])
+    if len(page_status_errors) > 0:
+        print("\n#########\n")
+        print("The following pages were not downloaded (aka 404 not found, 503 service timed out or was denied):\n")
+        for item in page_status_errors:
+            print(item)
+        while True:
+            result = input("Would you like to continue? [y or n] and enter: ")
+            if result is 'y':
+                with open('./page_status_errors','w+') as f:
+                    f.write(yaml.dump(page_status_errors))
+                break
+            elif result is 'n':
+                exit()
+            else:
+                print("I don't understand.")
 
 def readyml(in_f):
     try:
@@ -131,23 +150,35 @@ def readyml(in_f):
             data = yaml.load(f)
         return data
     except Exception as e:
-        import traceback;print(traceback.format_exc())
-        exit()
+        if 'page_status' in in_f:
+            return
+        import traceback
+        print(traceback.format_exc())
+
 
 def run():
     parser = argparse.ArgumentParser(description="This program scrapes the specified websites contained with the prodcut_map.csv file.")
     parser.add_argument('-f','--force_download', help="Force the download", action="store_true")
+    parser.add_argument('-D','--Debug', help="Debug", action="store_true")
     args = parser.parse_args()
 
     p_map = 'product_map.csv'
     yml_file = 'result.yml'
+    page_status_errors = 'page_status_errors'
     csvtoyaml(p_map, yml_file)
     data = readyml(yml_file)
     if args.force_download:
+        print("Beginning Download Process...")
         downloadurls(data) #TODO: add getmtime check for files and skip if less than, or add flag to force
     from parseSites import Start
-    _test = False
-    Start(_test, yml_file, data)
+    Debug = args.Debug
+    print("Starting Site Parsing...")
+    try:
+        status_errors = readyml(page_status_errors)
+    except:
+        status_errors = None
+        pass
+    Start(Debug, yml_file, data, status_errors)
 
 if __name__=="__main__":
     run()

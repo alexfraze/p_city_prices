@@ -1,5 +1,6 @@
 import os, json
 from bs4 import BeautifulSoup as BS
+from _reval import evalSettings
 
 log = open('log','a+')
 
@@ -55,7 +56,6 @@ def returnJsonFromJsonDumpFile(fp):
     _json = json.loads(_json)
     return _json
 
-    
 def returnItemInfoFromHRNDJson(_json, *args, **kwargs):
     '''
     print(_json.keys())
@@ -74,12 +74,10 @@ def returnItemInfoFromHRNDJson(_json, *args, **kwargs):
     check_name_price(fp,name,price)
     return name,price
 
-
 def check_error( e, fp, *args, **kwargs):
     # import pdb;pdb.set_trace()
 
     return
-
 
 def check_name_price(fp, name, price):
     # check
@@ -100,9 +98,6 @@ def check_name_price(fp, name, price):
         # import pdb;pdb.set_trace()
         pass
     return
-
-
-
 
 def returnItemInfoFromSite(fp, *args, **kwargs):
     '''
@@ -184,120 +179,3 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
         handleException(None,e=e, t=t, d=d, soup=soup, lines=lines)
         return None, None
     return product_name, price
-
-
-
-# def returnItemInfoBulkSupplementsJson(_json, *args, **kwargs):
-#     '''
-#     Expects a json.loads(str)
-    
-#     # dict_keys(['ajaxBaseUrl', 'chooseText', 'description', 'oldPrice', 'shortDescription',
-#     # 'rangeToLabel', 'productAttributes', 'productName', 'priceFromLabel', 'childProducts', 'template', 'basePrice', 
-#     # 'attributes', 'showPriceRangesInOptions', 'taxConfig', 'productId'])
-#     '''
-#     fp = kwargs['fp']
-#     name = None
-#     price = None
-#     items = []
-#     for item in _json['attributes']['134']['options']:
-#         for _id in _json['childProducts'].keys():
-#                 if _id in item['products'][0]:
-#                     name = item['label']
-#                     price = _json['childProducts'][_id]
-#                     product_id = _id # not used
-#                     check_name_price(fp,name,price)
-#                     items.append([name,price])
-#     return items
-# def returnItemInfoFromSite(fp, *args, **kwargs):
-#     '''
-#     [LiftMode, NewMind] uses magento
-#     Magento updates its html with javascript internally and does not post
-#     any dictionaries/json to the site for their items
-#     '''
-#     retailer = kwargs['retailer']
-#     _reval = kwargs['_reval']
-#     _multi = kwargs['_dict']['multi_size']
-#     name = None
-#     price = None
-
-#     lines = readFile(fp)
-#     soup = BS(lines)
-#     # name
-#     try:
-#         product_name = soup.find_all("h1",itemprop="name")[0].next
-#         name = product_name[0].next
-#     except Exception as e:
-#         pass
-    # # nootropicscity uses h2 in their name
-    # if len(product_name) is 0:
-    #     try:
-    #         product_name = 
-    #         name = product_name[0].next
-    #     except Exception as e:
-    #         #check_error(e,fp,name=name,price=price,product_name=product_name)
-    #         pass
-
-
-    # ########
-    # Variants
-    ######
-    #newstarnootropics
-    #peaknootropics
-    #powdercity
-    #bulksupplements # handled seperately
-    # if _multi is True:
-    #     try:
-    #         units = None
-    #         unit_of_measure = None
-    #         prices = None
-    #         units = exec(_reval[retailer]['units']) # Units
-    #         unit_of_measure = exec(_reval[retailer]['unit_of_measure']) # Unit of Measure
-    #         prices = exec(_reval[retailer]['prices']) #prices  
-    #         print(units, unit_of_measure, prices)
-    #     except Exception as e:
-    #         print(e)
-    #         pass
-    # # price        
-    # try:
-    #     # soup.find_all("table",class_="variations")[0].find_all('option')[2]['value'] # Units
-    #     # soup.find_all("table",class_="variations")[0].find('label').next # Unit of Measure
-    #     # soup.find_all(attrs={'class': 'entry-summary'})[0].find_all('span',class_="amount") #prices
-    #     product_price = soup.find("meta",itemprop="price").attrs['content']
-    #     price = product_price.attrs['content']
-    # except Exception as e:
-    #     #check_error(e,fp,name=name,price=price,product_name=product_name, product_price=product_price)
-    #     pass
-
-    # check_name_price(fp,name,price)
-    # return name, price
-
-# def returnItemInfoNewStar(fp):
-#     '''
-#     custom site with a weird dropdown menu
-#     '''
-#     name = None
-#     price = None
-
-#     lines = readFile(fp)
-#     soup = BS(lines, 'html5lib') # malformed tags from html5 javascript use html5lib to sanitize
-#     products = [product.text.split(' - ') for product in soup.find_all("option")]
-
-#     items = []
-#     for item in products:
-#         name = item[0]
-#         price = item[1]
-#         items.append([name,price])
-#         check_name_price(fp,name,price)
-#     # import pdb;pdb.set_trace()
-#     return items
-
-# def returnItemInfoPowderCity(fp):
-#     name = None
-#     price = None
-
-#     lines = readFile(fp)
-#     soup = BS(lines)
-#     name =  soup.find_all("h1", id="product-title")[0].next
-#     price = soup.find_all("span", itemprop="price")[0].next
-#     check_name_price(fp,name,price)
-#     return name, price
