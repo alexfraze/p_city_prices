@@ -1,6 +1,5 @@
 import os, json
 from bs4 import BeautifulSoup as BS
-from _reval import evalSettings
 
 log = open('log','a+')
 
@@ -31,7 +30,7 @@ def handleException(*args, **kwargs):
         print('{0}: {1}'.format(key,kwargs['d'][key]))
     print(kwargs['e'])
     print(kwargs['t'])
-    print('The html file has been written out to ./DEBUG/html and can be accessed with via soup and lines')
+    print("\nThe html file has been written out to ./DEBUG/html and can be accessed with via soup and lines\n type dir() to see what to work with")
     import pdb;pdb.set_trace()
     return
 
@@ -56,7 +55,7 @@ def returnJsonFromJsonDumpFile(fp):
     _json = json.loads(_json)
     return _json
 
-def returnItemInfoFromHRNDJson(_json, *args, **kwargs):
+def returnItemInfoFromJson(_json, *args, **kwargs):
     '''
     print(_json.keys())
     print(_json['details'].keys())
@@ -106,6 +105,7 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
     _reval = kwargs['_reval']
     _multi = kwargs['_dict']['multi_size']
     _type = _reval[retailer]['_type']
+    total_units_list = kwargs['_dict']['total_units'].split(',')
     name = None
     price = None
     units = None
@@ -113,6 +113,8 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
     prices = None
     product_name = None
     price = None
+    soup = None
+    lines = None
     #import pdb;pdb.set_trace()
     try:
         if retailer is 'bulksupplements':
@@ -130,6 +132,13 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
                             check_name_price(fp,name,price)
                             items.append([name,price])
             return items
+        if (retailer is 'hardrhino') or (retailer is 'nootropicsdepot'):
+            _json = returnJsonFromJsonDumpFile(fp)
+            product_name, price = returnItemInfoFromJson(_json, fp=fp)
+            _r, _e = check_name_price(fp,product_name,price)
+            if not _r:
+                raise Exception(_e)
+            return product_name, price
         if _type is 'bs4':
             # import pdb;pdb.set_trace()
             lines = readFile(fp)
@@ -139,6 +148,9 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
                     units = eval(_reval[retailer]['units']) # Units
                     unit_of_measure = eval(_reval[retailer]['unit_of_measure']) # Unit of Measure
                     prices = eval(_reval[retailer]['prices']) #prices
+                    if len(prices) is not len(total_units_list):
+                        if len(units) is not len(prices):
+                            raise Exception("[ERROR] Total units listed are not equal to the prices scraped")
                     product_name = eval(_reval[retailer]['product_name'])
                     return units, unit_of_measure, prices
                 except Exception as e:

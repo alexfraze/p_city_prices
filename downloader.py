@@ -24,6 +24,7 @@ def csvtoyaml(in_f, out_f):
     total_units = header.index('total_units')
     single_size = header.index('single_size')
     multi_size = header.index('multi_size')
+    internal_sku = header.index('internal_sku')
     prev_retailer = None
     _dict = {}
     for line in lines[1:]:
@@ -33,7 +34,7 @@ def csvtoyaml(in_f, out_f):
         if test is None:
             _dict.update({line[retailer]: {}})
         try:
-            _dict[line[retailer]].update({line[product]: {'comp_name': 'COMPNAME',
+            _dict[line[retailer]].update({line[product]: {'internal_sku': line[internal_sku],
                                                         'url': line[url], 
                                                         'product': 
                                                         line[product], 

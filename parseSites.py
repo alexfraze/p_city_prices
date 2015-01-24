@@ -18,9 +18,9 @@ class Start(object):
         '''
         # define this to skip parsing
         # used to skip retailers
-        self.skip_list = ['peaknootropics','nootropicscity','powdercity','powdercitysingle', 
-                          'nootropicsdepot','newstarnootropics','newmind',
-                          'bulksupplements','hardrhino', 'smartpowders'] # 'liftmode',
+        self.skip_list = ['hardrhino']#'peaknootropics','nootropicscity','liftmode', 'smartpowders',
+                          #'newmind','newstarnootropics','powdercitysingle', 'powdercity',
+                          #'bulksupplements','nootropicsdepot'] # ,'hardrhino'
                     
         self.txt_dir = os.getcwd()
         self.download_dir = os.getcwd() # retailer_name/downloaded_pages
@@ -44,6 +44,7 @@ class Start(object):
         results = []
         _reval = evalSettings()
         for retailer in _reval.keys():
+            print("Parsing: {0}".format(retailer))
             name = None
             price = None
             items = None

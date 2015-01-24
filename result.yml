@@ -1,0 +1,1034 @@
+bulksupplements:
+  5 htp:
+    internal_sku: 5HTP
+    multi_size: 'True'
+    product: 5 htp
+    single_size: None
+    total_units: 10, 25, 50, 100, 250, 500, 1000, 5000, 25000
+    unit_size: g
+    url: http://www.bulksupplements.com/5-htp-griffonia-seed-extract.html
+  alcar:
+    internal_sku: ACTCARN
+    multi_size: 'True'
+    product: alcar
+    single_size: None
+    total_units: 100, 250, 500, 1000, 5000, 25000
+    unit_size: g
+    url: http://www.bulksupplements.com/acetyl-l-carnitine-alcar.html
+  beta alanine:
+    internal_sku: BETALA
+    multi_size: 'True'
+    product: beta alanine
+    single_size: None
+    total_units: 100, 250, 500, 1000, 5000, 25000
+    unit_size: g
+    url: http://www.bulksupplements.com/beta-alanine.html
+  caffeine:
+    internal_sku: CAFANH
+    multi_size: 'True'
+    product: caffeine
+    single_size: None
+    total_units: 100, 250, 500, 1000, 5000, 25000
+    unit_size: g
+    url: http://www.bulksupplements.com/caffeine-powder-anhydrous.html
+  choline bitartrate:
+    internal_sku: CHOBIT
+    multi_size: 'True'
+    product: choline bitartrate
+    single_size: None
+    total_units: 100, 250, 500, 1000, 5000, 25000
+    unit_size: g
+    url: http://www.bulksupplements.com/choline-bitartrate.html
+  creatine monohydrate:
+    internal_sku: CREMON
+    multi_size: 'True'
+    product: creatine monohydrate
+    single_size: None
+    total_units: 250, 500, 1000, 5000, 25000
+    unit_size: g
+    url: http://www.bulksupplements.com/creatine-monohydrate.html
+  l citruline dl malate:
+    internal_sku: CITMAL
+    multi_size: 'True'
+    product: l citruline dl malate
+    single_size: None
+    total_units: 100, 250, 500, 1000, 5000, 25000
+    unit_size: g
+    url: http://www.bulksupplements.com/l-citrulline-dl-malate-200.html
+  l theanine:
+    internal_sku: THEANI
+    multi_size: 'True'
+    product: l theanine
+    single_size: None
+    total_units: 50, 100, 250, 500, 1000, 5000, 25000
+    unit_size: g
+    url: http://www.bulksupplements.com/l-theanine.html
+  melatonin:
+    internal_sku: MELATO
+    multi_size: 'True'
+    product: melatonin
+    single_size: None
+    total_units: 10, 25, 50, 100, 250, 500, 1000, 5000
+    unit_size: g
+    url: http://www.bulksupplements.com/melatonin.html
+  n acetyl l tyrosine:
+    internal_sku: NALT
+    multi_size: 'True'
+    product: n acetyl l tyrosine
+    single_size: None
+    total_units: 100, 250, 500, 1000, 5000, 25000
+    unit_size: g
+    url: http://www.bulksupplements.com/n-acetyl-l-tyrosine-nalt.html
+  noopept:
+    internal_sku: NOOPT
+    multi_size: 'True'
+    product: noopept
+    single_size: None
+    total_units: 1, 5, 10, 25, 50
+    unit_size: g
+    url: http://www.bulksupplements.com/noopept.html
+  phenibut:
+    internal_sku: PHENIB
+    multi_size: 'True'
+    product: phenibut
+    single_size: None
+    total_units: 50, 100, 250, 500, 1000
+    unit_size: g
+    url: http://www.bulksupplements.com/phenibut.html
+hardrhino:
+  Agmatine Sulfate:
+    internal_sku: AGMSUL
+    multi_size: None
+    product: Agmatine Sulfate
+    single_size: 'True'
+    total_units: '1000'
+    unit_size: g
+    url: http://hardrhino.com/remote.php?action=add&product_id=1367&variation_id=&currency_id=&attribute%5B237%5D=84&qty%5B%5D=1&w=getProductAttributeDetails
+  Choline Bitartrate:
+    internal_sku: CHOBIT
+    multi_size: None
+    product: Choline Bitartrate
+    single_size: 'True'
+    total_units: '1000'
+    unit_size: g
+    url: http://hardrhino.com/remote.php?action=add&product_id=1030&variation_id=&currency_id=&attribute%5B411%5D=127&qty%5B%5D=1&w=getProductAttributeDetails
+  'Creatine Monohydrate ':
+    internal_sku: CREMON
+    multi_size: None
+    product: 'Creatine Monohydrate '
+    single_size: 'True'
+    total_units: '5000'
+    unit_size: g
+    url: http://hardrhino.com/remote.php?action=add&product_id=1039&variation_id=&currency_id=&attribute%5B464%5D=142&qty%5B%5D=1&w=getProductAttributeDetails
+  L-Theanine:
+    internal_sku: THEANI
+    multi_size: None
+    product: L-Theanine
+    single_size: 'True'
+    total_units: '1000'
+    unit_size: g
+    url: http://hardrhino.com/remote.php?action=add&product_id=1349&variation_id=&currency_id=&attribute%5B414%5D=132&qty%5B%5D=1&w=getProductAttributeDetails
+  Phenibut:
+    internal_sku: PHENIB
+    multi_size: None
+    product: Phenibut
+    single_size: 'True'
+    total_units: '1000'
+    unit_size: g
+    url: http://hardrhino.com/remote.php?action=add&product_id=1297&variation_id=&currency_id=&attribute%5B412%5D=132&qty%5B%5D=1&w=getProductAttributeDetails
+  Synephrine:
+    internal_sku: SYNPHN
+    multi_size: None
+    product: Synephrine
+    single_size: 'True'
+    total_units: '90'
+    unit_size: g
+    url: http://hardrhino.com/remote.php?action=add&product_id=1331&variation_id=&currency_id=&attribute%5B528%5D=154&qty%5B%5D=1&w=getProductAttributeDetails
+liftmode:
+  Caffeine:
+    internal_sku: CAFANH
+    multi_size: None
+    product: Caffeine
+    single_size: 'True'
+    total_units: '400'
+    unit_size: g
+    url: https://liftmode.com/caffeine-natural-400-grams-14-11-oz-99-pure-fblm.html
+  Choline Bitartrate:
+    internal_sku: CHOBIT
+    multi_size: None
+    product: Choline Bitartrate
+    single_size: 'True'
+    total_units: '400'
+    unit_size: g
+    url: https://liftmode.com/choline-bitartrate-400-grams-14-11-oz-99-pure-fblm.html
+  L Theanine:
+    internal_sku: THEANI
+    multi_size: None
+    product: L Theanine
+    single_size: 'True'
+    total_units: '200'
+    unit_size: g
+    url: https://liftmode.com/l-theanine-100-grams-7-05-oz-99-pure-fblm.html
+  Noopept:
+    internal_sku: NOOPT
+    multi_size: None
+    product: Noopept
+    single_size: 'True'
+    total_units: '20'
+    unit_size: g
+    url: https://liftmode.com/noopepttm-gvs-111-20-grams-0-35-oz-98-pure-fblm.html
+  Phenibut:
+    internal_sku: PHENIB
+    multi_size: None
+    product: Phenibut
+    single_size: 'True'
+    total_units: '1000'
+    unit_size: g
+    url: https://liftmode.com/phenibut-crystal-granules-1000-grams-35-27-oz-99-5-pure-fblm.html
+  Phenylpiracetam:
+    internal_sku: PHNPIRRAC
+    multi_size: None
+    product: Phenylpiracetam
+    single_size: 'True'
+    total_units: '20'
+    unit_size: g
+    url: https://liftmode.com/phenylpiracetam-carphedon-20-grams-0-71-oz-99-pure-fblm.html
+newmind:
+  Aniracetam:
+    internal_sku: ANITAM
+    multi_size: None
+    product: Aniracetam
+    single_size: 'True'
+    total_units: '400'
+    unit_size: g
+    url: https://newmind.com/aniracetam-400-grams-99.html
+  Coluracetam:
+    internal_sku: COLUTAM
+    multi_size: None
+    product: Coluracetam
+    single_size: 'True'
+    total_units: '6'
+    unit_size: g
+    url: https://newmind.com/coluracetam-219.html
+  noopept:
+    internal_sku: NOOPT
+    multi_size: None
+    product: noopept
+    single_size: 'True'
+    total_units: '100'
+    unit_size: g
+    url: https://newmind.com/noopept-100-grams-98.html
+  oxiracetam:
+    internal_sku: OXIRAC
+    multi_size: None
+    product: oxiracetam
+    single_size: 'True'
+    total_units: '50'
+    unit_size: g
+    url: https://newmind.com/oxiracetam.html
+  phenylpiracetam:
+    internal_sku: PHNPIRRAC
+    multi_size: None
+    product: phenylpiracetam
+    single_size: 'True'
+    total_units: '100'
+    unit_size: g
+    url: https://newmind.com/phenylpiracetam-491.html
+  piracetam:
+    internal_sku: PIRRAC
+    multi_size: None
+    product: piracetam
+    single_size: 'True'
+    total_units: '1000'
+    unit_size: g
+    url: https://newmind.com/piracetam-1000-grams-99.html
+  unifiram:
+    internal_sku: DISCONTINUED
+    multi_size: None
+    product: unifiram
+    single_size: 'True'
+    total_units: '3'
+    unit_size: g
+    url: https://newmind.com/unifiram-156.html
+newstarnootropics:
+  aniracetam:
+    internal_sku: ANITAM
+    multi_size: 'True'
+    product: aniracetam
+    single_size: None
+    total_units: 25, 50, 100, 200, 400
+    unit_size: g
+    url: https://www.newstarnootropics.com/aniracetam
+  coluracetam:
+    internal_sku: COLUTAM
+    multi_size: 'True'
+    product: coluracetam
+    single_size: None
+    total_units: .25, .5, 1, 2, 5, 10, 20
+    unit_size: g
+    url: https://www.newstarnootropics.com/coluracetam
+  fasoracetam:
+    internal_sku: FASO
+    multi_size: 'True'
+    product: fasoracetam
+    single_size: None
+    total_units: .25, .5, 1, 2, 5, 10
+    unit_size: g
+    url: https://www.newstarnootropics.com/fasoracetam
+  idra21:
+    internal_sku: IRDA
+    multi_size: 'True'
+    product: idra21
+    single_size: None
+    total_units: .25, .5, 1, 2, 5, 10, 20, 30
+    unit_size: g
+    url: https://www.newstarnootropics.com/idra21
+  noopept:
+    internal_sku: NOOPT
+    multi_size: 'True'
+    product: noopept
+    single_size: None
+    total_units: 1, 2.5, 5, 10, 20, 40, 100, 200
+    unit_size: g
+    url: https://www.newstarnootropics.com/noopept
+  oxiracetam:
+    internal_sku: OXIRAC
+    multi_size: 'True'
+    product: oxiracetam
+    single_size: None
+    total_units: 10, 25
+    unit_size: g
+    url: https://www.newstarnootropics.com/oxiracetam
+  phenylpiracetam:
+    internal_sku: PHNPIRRAC
+    multi_size: 'True'
+    product: phenylpiracetam
+    single_size: None
+    total_units: 2.5, 5, 10
+    unit_size: g
+    url: https://www.newstarnootropics.com/phenylpiracetam
+  piracetam:
+    internal_sku: PIRRAC
+    multi_size: 'True'
+    product: piracetam
+    single_size: None
+    total_units: 30, 100, 200, 500, 1000
+    unit_size: g
+    url: https://www.newstarnootropics.com/piracetam
+  pramiracetam:
+    internal_sku: PRMRAC
+    multi_size: 'True'
+    product: pramiracetam
+    single_size: None
+    total_units: '5'
+    unit_size: g
+    url: https://www.newstarnootropics.com/pramiracetam
+  prl853:
+    internal_sku: PRL
+    multi_size: 'True'
+    product: prl853
+    single_size: None
+    total_units: .25, .5, 1
+    unit_size: g
+    url: https://www.newstarnootropics.com/prl853
+  unifiram:
+    internal_sku: DISCONTINUED
+    multi_size: 'True'
+    product: unifiram
+    single_size: None
+    total_units: .25, .5, 1, 2, 5, 10
+    unit_size: g
+    url: https://www.newstarnootropics.com/unifiram
+nootropicscity:
+  Adrafinil:
+    internal_sku: ADRAFI
+    multi_size: 2pack?
+    product: Adrafinil
+    single_size: 'True'
+    total_units: '24'
+    unit_size: g
+    url: http://nootropicscity.com/product/adrafinil-capsules-sample-pack-x2/
+  Aniracetam:
+    internal_sku: ANITAM
+    multi_size: None
+    product: Aniracetam
+    single_size: 'True'
+    total_units: '63'
+    unit_size: g
+    url: http://nootropicscity.com/product/aniracetam-capsules/
+  CDP Choline Citicoline:
+    internal_sku: CDPCHO
+    multi_size: None
+    product: CDP Choline Citicoline
+    single_size: 'True'
+    total_units: '15'
+    unit_size: g
+    url: http://nootropicscity.com/product/cdp-choline-citicoline-capsules/
+  Galantamine Caps Full:
+    internal_sku: GALANT
+    multi_size: None
+    product: Galantamine Caps Full
+    single_size: 'True'
+    total_units: '0.72'
+    unit_size: g
+    url: http://nootropicscity.com/product/galantamine-capsules/
+  Galantamine Caps Sample:
+    internal_sku: GALANT
+    multi_size: None
+    product: Galantamine Caps Sample
+    single_size: 'True'
+    total_units: '0.16'
+    unit_size: g
+    url: http://nootropicscity.com/product/galantamine-capsules-sample-pack-20-capsules-8-mg/
+  L Theanine:
+    internal_sku: THEANI
+    multi_size: None
+    product: L Theanine
+    single_size: 'True'
+    total_units: '27'
+    unit_size: g
+    url: http://nootropicscity.com/product/l-theanine-capsules/
+  Phenibut:
+    internal_sku: PHENIB
+    multi_size: None
+    product: Phenibut
+    single_size: 'True'
+    total_units: '45'
+    unit_size: g
+    url: http://nootropicscity.com/product/phenibut-capsules/
+  Phenylpiracetam:
+    internal_sku: PHNPIRRAC
+    multi_size: None
+    product: Phenylpiracetam
+    single_size: 'True'
+    total_units: '18'
+    unit_size: g
+    url: http://nootropicscity.com/product/phenylpiracetam-capsules/
+  Piracetam:
+    internal_sku: PIRRAC
+    multi_size: None
+    product: Piracetam
+    single_size: 'True'
+    total_units: '72'
+    unit_size: g
+    url: http://nootropicscity.com/product/piracetam-capsules/
+  noopept:
+    internal_sku: NOOPT
+    multi_size: None
+    product: noopept
+    single_size: 'True'
+    total_units: '0.9'
+    unit_size: g
+    url: http://nootropicscity.com/product/noopept-capsules/
+nootropicsdepot:
+  ALCAR:
+    internal_sku: ACTCARN
+    multi_size: None
+    product: ALCAR
+    single_size: 'True'
+    total_units: '1000'
+    unit_size: g
+    url: http://nootropicsdepot.com/remote.php?action=add&product_id=173&variation_id=&currency_id=&attribute%5B227%5D=85&qty%5B%5D=1&w=getProductAttributeDetails
+  Alpha GPC:
+    internal_sku: AGPC50
+    multi_size: None
+    product: Alpha GPC
+    single_size: 'True'
+    total_units: '250'
+    unit_size: g
+    url: http://nootropicsdepot.com/remote.php?action=add&product_id=174&variation_id=&currency_id=&attribute%5B230%5D=89&qty%5B%5D=1&w=getProductAttributeDetails
+  Ashwagandha:
+    internal_sku: ASHWAG
+    multi_size: None
+    product: Ashwagandha
+    single_size: 'True'
+    total_units: '500'
+    unit_size: g
+    url: http://nootropicsdepot.com/remote.php?action=add&product_id=186&variation_id=&currency_id=&attribute%5B252%5D=84&qty%5B%5D=1&w=getProductAttributeDetails
+  CDP Choline:
+    internal_sku: CDPCHO
+    multi_size: None
+    product: CDP Choline
+    single_size: 'True'
+    total_units: '250'
+    unit_size: g
+    url: http://nootropicsdepot.com/remote.php?action=add&product_id=169&variation_id=&currency_id=&attribute%5B218%5D=89&qty%5B%5D=1&w=getProductAttributeDetails
+  Choline Bitartrate:
+    internal_sku: CHOBIT
+    multi_size: None
+    product: Choline Bitartrate
+    single_size: 'True'
+    total_units: '1000'
+    unit_size: g
+    url: http://nootropicsdepot.com/remote.php?action=add&product_id=166&variation_id=&currency_id=&attribute%5B224%5D=124&qty%5B%5D=1&w=getProductAttributeDetails
+  Creatine Monohydrate:
+    internal_sku: CREMON
+    multi_size: None
+    product: Creatine Monohydrate
+    single_size: 'True'
+    total_units: '5000'
+    unit_size: g
+    url: http://nootropicsdepot.com/remote.php?action=add&product_id=185&variation_id=&currency_id=&attribute%5B251%5D=129&qty%5B%5D=1&w=getProductAttributeDetails
+  L-Theanine:
+    internal_sku: THEANI
+    multi_size: None
+    product: L-Theanine
+    single_size: 'True'
+    total_units: '1000'
+    unit_size: g
+    url: http://nootropicsdepot.com/remote.php?action=add&product_id=170&variation_id=&currency_id=&attribute%5B217%5D=78&qty%5B%5D=1&w=getProductAttributeDetails
+peaknootropics:
+  Alpha GPC:
+    internal_sku: AGPC50
+    multi_size: 'True'
+    product: Alpha GPC
+    single_size: None
+    total_units: 50, 100
+    unit_size: g
+    url: http://peaknootropics.com/shop/alpha-gpc/
+  alCAR:
+    internal_sku: ACTCARN
+    multi_size: 'True'
+    product: alCAR
+    single_size: None
+    total_units: 100, 200
+    unit_size: g
+    url: http://peaknootropics.com/shop/alcar/
+  aniracetam:
+    internal_sku: ANITAM
+    multi_size: 'True'
+    product: aniracetam
+    single_size: None
+    total_units: 50, 100
+    unit_size: g
+    url: http://peaknootropics.com/shop/aniracetam/
+  cdP Choline:
+    internal_sku: CDPCHO
+    multi_size: 'True'
+    product: cdP Choline
+    single_size: None
+    total_units: 50, 100
+    unit_size: g
+    url: http://peaknootropics.com/shop/cdp-choline/
+  l Theanine:
+    internal_sku: THEANI
+    multi_size: 'True'
+    product: l Theanine
+    single_size: None
+    total_units: 50, 100
+    unit_size: g
+    url: http://peaknootropics.com/shop/l-theanine/
+  noopept:
+    internal_sku: NOOPT
+    multi_size: 'True'
+    product: noopept
+    single_size: None
+    total_units: 10, 20, 40
+    unit_size: g
+    url: http://peaknootropics.com/shop/noopept/
+  oxiracetam:
+    internal_sku: OXIRAC
+    multi_size: 'True'
+    product: oxiracetam
+    single_size: None
+    total_units: 50, 100
+    unit_size: g
+    url: http://peaknootropics.com/shop/oxiracetam/
+  phenibut:
+    internal_sku: PHENIB
+    multi_size: None
+    product: phenibut
+    single_size: 'True'
+    total_units: '50'
+    unit_size: g
+    url: http://peaknootropics.com/shop/phenibut/
+  phenylpiracetam:
+    internal_sku: PHNPIRRAC
+    multi_size: None
+    product: phenylpiracetam
+    single_size: 'True'
+    total_units: '10'
+    unit_size: g
+    url: http://peaknootropics.com/shop/phenylpiracetam/
+  piracetam:
+    internal_sku: PIRRAC
+    multi_size: 'True'
+    product: piracetam
+    single_size: None
+    total_units: 500, 1000
+    unit_size: g
+    url: http://peaknootropics.com/shop/piracetam/
+  pramiracetam:
+    internal_sku: PRMRAC
+    multi_size: 'True'
+    product: pramiracetam
+    single_size: None
+    total_units: 50, 100
+    unit_size: g
+    url: http://peaknootropics.com/shop/pramiracetam/
+  sulbutiamine:
+    internal_sku: SULBUT
+    multi_size: None
+    product: sulbutiamine
+    single_size: 'True'
+    total_units: '50'
+    unit_size: g
+    url: http://peaknootropics.com/shop/sulbutiamine/
+powdercity:
+  "#0 \u2013 500 count gelatin capsules":
+    internal_sku: A-GELCAP0
+    multi_size: 'True'
+    product: "#0 \u2013 500 count gelatin capsules"
+    single_size: None
+    total_units: '500'
+    unit_size: unit
+    url: http://www.powdercity.com/products/empty-gelatin-capsules-500-count
+  "#00 \u2013 500 count gelatin capsules":
+    internal_sku: A-GELCAP00
+    multi_size: 'True'
+    product: "#00 \u2013 500 count gelatin capsules"
+    single_size: None
+    total_units: '500'
+    unit_size: g
+    url: http://www.powdercity.com/products/empty-gelatin-capsules-00-500-count
+  20:1 miligram digital scale:
+    internal_sku: SCALE-MS
+    multi_size: 'True'
+    product: 20:1 miligram digital scale
+    single_size: None
+    total_units: '1'
+    unit_size: g
+    url: http://www.powdercity.com/products/gm-20-1-milligram-digital-scale
+  5 htp:
+    internal_sku: 5HTP
+    multi_size: 'True'
+    product: 5 htp
+    single_size: None
+    total_units: 10, 50, 100
+    unit_size: g
+    url: http://www.powdercity.com/products/5-htp
+  Alpha GPC:
+    internal_sku: AGPC50
+    multi_size: 'True'
+    product: Alpha GPC
+    single_size: None
+    total_units: 10, 50, 100, 250
+    unit_size: g
+    url: http://www.powdercity.com/products/alpha-gpc
+  N-acetyl-l-tyrosine:
+    internal_sku: NALT
+    multi_size: 'True'
+    product: N-acetyl-l-tyrosine
+    single_size: None
+    total_units: 25, 50, 100, 1000
+    unit_size: g
+    url: http://www.powdercity.com/products/n-acetyl-l-tyrosine
+  acetyl l carnitine:
+    internal_sku: ACTCARN
+    multi_size: 'True'
+    product: acetyl l carnitine
+    single_size: None
+    total_units: 50, 100, 250, 500, 1000
+    unit_size: g
+    url: http://www.powdercity.com/products/acetyl-l-carnitine-powder-alcar
+  amp citrate:
+    internal_sku: AMPCIT
+    multi_size: 'True'
+    product: amp citrate
+    single_size: None
+    total_units: 10, 25, 50, 250
+    unit_size: g
+    url: http://www.powdercity.com/products/amp-citrate
+  aniracetam:
+    internal_sku: ANITAM
+    multi_size: 'True'
+    product: aniracetam
+    single_size: None
+    total_units: 10, 30, 100, 500, 1000
+    unit_size: g
+    url: http://www.powdercity.com/products/aniracetam
+  ashwagandha:
+    internal_sku: ASHWAG
+    multi_size: 'True'
+    product: ashwagandha
+    single_size: None
+    total_units: 50, 100
+    unit_size: g
+    url: http://www.powdercity.com/products/ashwagandha-extract-bulk-powder
+  bacopa monnieri:
+    internal_sku: BACMON
+    multi_size: 'True'
+    product: bacopa monnieri
+    single_size: None
+    total_units: 25, 50, 100, 250, 1000
+    unit_size: g
+    url: http://www.powdercity.com/products/bacopa-monnieri-20-bacosides
+  beta alanine:
+    internal_sku: BETALA
+    multi_size: 'True'
+    product: beta alanine
+    single_size: None
+    total_units: 100, 500, 1000
+    unit_size: g
+    url: http://www.powdercity.com/products/beta-alanine
+  caffeine anhydrous:
+    internal_sku: CAFANH
+    multi_size: 'True'
+    product: caffeine anhydrous
+    single_size: None
+    total_units: 10, 50, 100, 500, 1000, 5000, 20000
+    unit_size: g
+    url: http://www.powdercity.com/products/caffeine-anhydrous
+  cdp Choline capsules:
+    internal_sku: CDPCHO
+    multi_size: 'True'
+    product: cdp Choline capsules
+    single_size: None
+    total_units: 1200, 2400, 7200
+    unit_size: g
+    url: http://www.powdercity.com/products/cdp-choline-capsules
+  choline Bitartrate:
+    internal_sku: CHOBIT
+    multi_size: 'True'
+    product: choline Bitartrate
+    single_size: None
+    total_units: 100, 500, 1000
+    unit_size: g
+    url: http://www.powdercity.com/products/choline-bitartrate
+  choline cdp:
+    internal_sku: CDPCHO
+    multi_size: 'True'
+    product: choline cdp
+    single_size: None
+    total_units: 10, 25, 50, 100, 250
+    unit_size: g
+    url: http://www.powdercity.com/products/choline-cdp
+  citruline malate:
+    internal_sku: CITMAL
+    multi_size: 'True'
+    product: citruline malate
+    single_size: None
+    total_units: 125, 250, 500
+    unit_size: g
+    url: http://www.powdercity.com/products/citrulline-malate-bulk-2-1-citral-m
+  coluracetam:
+    internal_sku: COLUTAM
+    multi_size: 'True'
+    product: coluracetam
+    single_size: None
+    total_units: .25, .5, 1, 5
+    unit_size: g
+    url: http://www.powdercity.com/products/coluracetam
+  creatine Monohydrate:
+    internal_sku: CREMON
+    multi_size: 'True'
+    product: creatine Monohydrate
+    single_size: None
+    total_units: 250, 500, 1000, 5000
+    unit_size: g
+    url: http://www.powdercity.com/products/creatine-monohydrate
+  fasoracetam:
+    internal_sku: FASO
+    multi_size: 'True'
+    product: fasoracetam
+    single_size: None
+    total_units: 10, 25, 50, 250
+    unit_size: g
+    url: http://www.powdercity.com/products/fasoracetam-ns-105
+  idra21:
+    internal_sku: IRDA
+    multi_size: 'True'
+    product: idra21
+    single_size: None
+    total_units: .25, .5, 1
+    unit_size: g
+    url: http://www.powdercity.com/products/idra-21
+  l Theanine:
+    internal_sku: THEANI
+    multi_size: 'True'
+    product: l Theanine
+    single_size: None
+    total_units: 10, 20, 100, 500
+    unit_size: g
+    url: http://www.powdercity.com/products/l-theanine
+  l glutamine:
+    internal_sku: GLTAMN
+    multi_size: 'True'
+    product: l glutamine
+    single_size: None
+    total_units: 5, 50, 100, 250, 500, 1000, 5000
+    unit_size: g
+    url: http://www.powdercity.com/products/l-glutamine
+  melatonin:
+    internal_sku: MELATO
+    multi_size: 'True'
+    product: melatonin
+    single_size: None
+    total_units: 1, 5, 10, 50
+    unit_size: g
+    url: http://www.powdercity.com/products/melatonin-powder
+  mucuna pruriens:
+    internal_sku: MUCPRU
+    multi_size: 'True'
+    product: mucuna pruriens
+    single_size: None
+    total_units: 5, 10, 30, 100
+    unit_size: g
+    url: http://www.powdercity.com/products/mucuna-pruriens
+  mucuna pruriens capsules:
+    internal_sku: MUCPRU
+    multi_size: 'True'
+    product: mucuna pruriens capsules
+    single_size: None
+    total_units: 4.5, 9, 27
+    unit_size: g
+    url: http://www.powdercity.com/products/mucuna-pruriens-extract-capsules
+  noopept:
+    internal_sku: NOOPT
+    multi_size: 'True'
+    product: noopept
+    single_size: None
+    total_units: 1, 5, 10, 25, 100
+    unit_size: g
+    url: http://www.powdercity.com/products/noopept
+  noopept capsules:
+    internal_sku: NOOPTCAPS
+    multi_size: 'True'
+    product: noopept capsules
+    single_size: None
+    total_units: .3, .9
+    unit_size: g
+    url: http://www.powdercity.com/products/noopept-capsules
+  oxiracetam:
+    internal_sku: OXIRAC
+    multi_size: 'True'
+    product: oxiracetam
+    single_size: None
+    total_units: 25, 50, 100, 250
+    unit_size: g
+    url: http://www.powdercity.com/products/oxiracetam
+  phenibut:
+    internal_sku: PHENIB
+    multi_size: 'True'
+    product: phenibut
+    single_size: None
+    total_units: 25, 100, 125, 250, 500, 1000
+    unit_size: g
+    url: http://www.powdercity.com/products/phenibut
+  phenibut capsules:
+    internal_sku: PHENIBCAPS
+    multi_size: 'True'
+    product: phenibut capsules
+    single_size: None
+    total_units: SOLDOUT
+    unit_size: g
+    url: http://www.powdercity.com/products/phenibut-hcl-capsules
+  phenylpiracetam:
+    internal_sku: PHNPIRRAC
+    multi_size: 'True'
+    product: phenylpiracetam
+    single_size: None
+    total_units: 1, 5, 10, 25
+    unit_size: g
+    url: http://www.powdercity.com/products/phenylpiracetam
+  piracetam:
+    internal_sku: PIRRAC
+    multi_size: 'True'
+    product: piracetam
+    single_size: None
+    total_units: 125, 250, 500, 1000
+    unit_size: g
+    url: http://www.powdercity.com/products/piracetam-powder
+  pramiracetam:
+    internal_sku: PRMRAC
+    multi_size: 'True'
+    product: pramiracetam
+    single_size: None
+    total_units: 1, 5, 10, 25, 50
+    unit_size: g
+    url: http://www.powdercity.com/products/pramiracetam
+  prl853:
+    internal_sku: PRL
+    multi_size: 'True'
+    product: prl853
+    single_size: None
+    total_units: .25, .5, 1, 2, 5, 10
+    unit_size: g
+    url: http://www.powdercity.com/products/prl-8-53
+  sulbutiamine:
+    internal_sku: SULBUT
+    multi_size: 'True'
+    product: sulbutiamine
+    single_size: None
+    total_units: 25, 50, 100
+    unit_size: g
+    url: http://www.powdercity.com/products/sulbutiamine-powder
+  sulbutiamine capsules:
+    internal_sku: SULBCAP
+    multi_size: 'True'
+    product: sulbutiamine capsules
+    single_size: None
+    total_units: '18'
+    unit_size: g
+    url: http://www.powdercity.com/products/sulbutiamine-capsules
+  synephrine:
+    internal_sku: SYNPHN
+    multi_size: 'True'
+    product: synephrine
+    single_size: None
+    total_units: 5, 10, 30, 100
+    unit_size: g
+    url: http://www.powdercity.com/products/synephrine-hcl
+  unifiram:
+    internal_sku: DISCONTINUED
+    multi_size: 'True'
+    product: unifiram
+    single_size: None
+    total_units: SOLDOUT
+    unit_size: g
+    url: http://www.powdercity.com/products/unifiram-dm232
+smartpowders:
+  5 htp:
+    internal_sku: 5HTP
+    multi_size: None
+    product: 5 htp
+    single_size: 'True'
+    total_units: '20'
+    unit_size: g
+    url: http://www.smartpowders.com/5-htp-20-grams.html
+  alcar:
+    internal_sku: ACTCARN
+    multi_size: None
+    product: alcar
+    single_size: 'True'
+    total_units: '1000'
+    unit_size: g
+    url: http://www.smartpowders.com/acetyl-l-carnitine-powder-1000-grams.html
+  alpha gpc:
+    internal_sku: AGPC50CAPS
+    multi_size: None
+    product: alpha gpc
+    single_size: 'True'
+    total_units: '9'
+    unit_size: g
+    url: http://www.smartpowders.com/smart-powders-alpha-gpc-150mg-60-caps.html
+  amp citrate:
+    internal_sku: AMPCIT
+    multi_size: None
+    product: amp citrate
+    single_size: 'True'
+    total_units: '25'
+    unit_size: g
+    url: http://www.smartpowders.com/smart-powders-amp-citrate-25g.html
+  bacopa:
+    internal_sku: BACMON
+    multi_size: None
+    product: bacopa
+    single_size: 'True'
+    total_units: '75'
+    unit_size: g
+    url: http://www.smartpowders.com/bacopa-monnieri-20-powder-75-grams.html
+  beta alanine:
+    internal_sku: BETALA
+    multi_size: None
+    product: beta alanine
+    single_size: 'True'
+    total_units: '200'
+    unit_size: g
+    url: http://www.smartpowders.com/smart-powders-beta-alanine-200-grams-9475.html
+  caffeine:
+    internal_sku: CAFANH
+    multi_size: None
+    product: caffeine
+    single_size: 'True'
+    total_units: '400'
+    unit_size: g
+    url: http://www.smartpowders.com/caffeine-anhydrous-400-grams.html
+  carphedon:
+    internal_sku: PHNPIRRAC
+    multi_size: None
+    product: carphedon
+    single_size: 'True'
+    total_units: '5'
+    unit_size: g
+    url: http://www.smartpowders.com/phenylpiracetam-carphedon-5g-bulk-powder.html
+  cdp choline:
+    internal_sku: CDPCHO
+    multi_size: None
+    product: cdp choline
+    single_size: 'True'
+    total_units: '24'
+    unit_size: g
+    url: http://www.smartpowders.com/smart-powders-cdp-choline-400mg-60-caps.html
+  citicoline cdp choline:
+    internal_sku: CDPCHO
+    multi_size: None
+    product: citicoline cdp choline
+    single_size: 'True'
+    total_units: '25'
+    unit_size: g
+    url: http://www.smartpowders.com/citicoline-cdp-choline-25g-powder.html
+  citruline malate:
+    internal_sku: CITMAL
+    multi_size: None
+    product: citruline malate
+    single_size: 'True'
+    total_units: '75'
+    unit_size: g
+    url: http://www.smartpowders.com/citrulline-malate-powder-75-grams.html
+  l glutamine:
+    internal_sku: GLTAMN
+    multi_size: None
+    product: l glutamine
+    single_size: 'True'
+    total_units: '400'
+    unit_size: g
+    url: http://www.smartpowders.com/l-glutamine-powder-400-grams.html
+  l theanine:
+    internal_sku: THEANI
+    multi_size: None
+    product: l theanine
+    single_size: 'True'
+    total_units: '20'
+    unit_size: g
+    url: http://www.smartpowders.com/l-theanine-powder-20-grams.html
+  noopept:
+    internal_sku: NOOPT
+    multi_size: None
+    product: noopept
+    single_size: 'True'
+    total_units: '1'
+    unit_size: g
+    url: http://www.smartpowders.com/smart-powders-noopept-10mg-100-cap.html
+  oxiracetam:
+    internal_sku: OXIRAC
+    multi_size: None
+    product: oxiracetam
+    single_size: 'True'
+    total_units: '49.6'
+    unit_size: g
+    url: http://www.smartpowders.com/oxiracetam-powder.html
+  phenibut:
+    internal_sku: PHENIB
+    multi_size: None
+    product: phenibut
+    single_size: 'True'
+    total_units: '18'
+    unit_size: g
+    url: http://www.smartpowders.com/phenibut-200mg-90-cap.html
+  picamilon:
+    internal_sku: PICAML
+    multi_size: None
+    product: picamilon
+    single_size: 'True'
+    total_units: '25'
+    unit_size: g
+    url: http://www.smartpowders.com/picamilon-powder-25g.html
+  sulbutiamine:
+    internal_sku: SULBUT
+    multi_size: None
+    product: sulbutiamine
+    single_size: 'True'
+    total_units: '30'
+    unit_size: g
+    url: http://www.smartpowders.com/sulbutiamine-30-grams.html
