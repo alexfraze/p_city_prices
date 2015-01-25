@@ -100,7 +100,7 @@ def downloadurls(data):
         for product in products.keys():
             url = data[retailer][product]['url']
             retailer_dict = {'retailer':retailer,'product':product,'url':url}
-            print(retailer_dict)
+            #print(retailer_dict)
             thread_list.append(retailer_dict)
         results = run_parallel_in_threads(fetch, thread_list)
         return results
@@ -156,13 +156,18 @@ def readyml(in_f):
         import traceback
         print(traceback.format_exc())
 
+def go_pdb(item):
+    print(item)
+    import pdb;pdb.set_trace()
+    return
 
 def run():
     parser = argparse.ArgumentParser(description="This program scrapes the specified websites contained with the prodcut_map.csv file.")
     parser.add_argument('-f','--force_download', help="Force the download", action="store_true")
     parser.add_argument('-D','--Debug', help="Debug", action="store_true")
+    parser.add_argument('-i','--ignore_exceptions', help="ignore exception handling", action="store_false")
     args = parser.parse_args()
-
+    handle_exceptions = args.ignore_exceptions
     p_map = 'product_map.csv'
     yml_file = 'result.yml'
     page_status_errors = 'page_status_errors'
@@ -179,7 +184,30 @@ def run():
     except:
         status_errors = None
         pass
-    Start(Debug, yml_file, data, status_errors)
+
+
+    items = Start(Debug, yml_file, data, status_errors, handle_exceptions)
+
+    # (Pdb) items.results[0]['csv_info']['total_units']
+    # '.25, .5, 1, 2, 5, 10, 20'
+    # (Pdb) items.results[0]['scraped']
+    # ([' ¼ gram (250mg) Coluracetam', ' ½ gram (500mg) Coluracetam', ' 1 gram Coluracetam', ' 2 grams Coluracetam', ' 5 grams Coluracetam', ' 10 grams Coluracetam', ' 20 grams Coluracetam'], 'gram', ['$13.80', '$18', '$24', '$44', '$88', '$139', '$249'])
+
+    for item in items.results:
+        print("Do these units match?")
+        print(item['csv_info']['total_units'],item['csv_info']['unit_size'])
+        if 'True' in item['csv_info']['single_size']:
+            print(item['scraped'])
+        else:
+            for i in item['scraped']:
+                print(i)
+        r = input("Input: ")
+        if "pdb" in r:
+            go_pdb(item)
+        elif "y" in r:
+            print('good')
+        elif "n" in r:
+            print('uhoh')
 
 if __name__=="__main__":
     run()

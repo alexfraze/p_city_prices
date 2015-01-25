@@ -7,8 +7,8 @@ def readFile(fp):
     # if the file is zero length the url fetcher failed
     if os.stat(fp).st_size is 0:
         raise Exception("[ERROR] File zero length: Does the url still exist?" +
-                        " Consider checking the csv file.",fp)
-    with open(fp,'r') as f:
+                        " Consider checking the following file.",fp)
+    with open(fp,'r+',encoding='utf-8') as f:
         lines = f.read()
     return lines
 
@@ -18,9 +18,12 @@ def handleException(*args, **kwargs):
         os.makedirs('./DEBUG')
     lines = kwargs['lines']
     soup = kwargs['soup']
-    with open('./DEBUG/html','w+') as f:
-        f.write(soup.prettify())
-    print(kwargs['e'])
+    try:
+        with open('./DEBUG/html','w+') as f:
+            f.write(soup.prettify())
+        print(kwargs['e'])
+    except:
+        pass
     #print(kwargs['d']['_reval'])
     for key in kwargs['d']:
         if key is '_reval':
@@ -30,7 +33,39 @@ def handleException(*args, **kwargs):
         print('{0}: {1}'.format(key,kwargs['d'][key]))
     print(kwargs['e'])
     print(kwargs['t'])
-    print("\nThe html file has been written out to ./DEBUG/html and can be accessed with via soup and lines\n type dir() to see what to work with")
+    print('''
+#
+#
+#
+#
+#############
+The html file has been written out to './DEBUG/html'
+
+By scrolling up if the _type is 'json' then 'soup' and 'lines'
+will may not exist. Otherwise what this means is that the
+scraper was unable to find the name or price. 
+
+Pdb is a way to do inline debugging so all python one liners apply.
+    (Pdb) kwargs.keys()
+    dict_keys(['t', 'd', 'soup', 'e', 'lines'])
+    t = traceback. By following the line numbers in the traceback
+        we can figure out where it failed.
+    d = a dictionary filled with product info
+    e = the error
+    lines = what was being parsed at the time of error
+
+type: 'soup' and/or 'lines' to view the html
+type: 'dir() to see what to work with
+type: 'continue' to ignore the error
+type: 'l' to see where we are in the code
+type: 'h' to see pdb commands
+type: 'args' or 'kwargs to see what info is available related to the item in question
+
+If 'soup' and/or 'lines' is empty that means the page 
+doesn't exist or failed to download
+
+################
+''')
     import pdb;pdb.set_trace()
     return
 
@@ -49,9 +84,7 @@ def returnJsonFromJsonDumpFile(fp):
     try:
         _json= readFile(fp)
     except Exception as e:
-        _s = '\n'.join([e.args[0],e.args[1],''])
-        log.write(_s)
-        return None
+        raise Exception(e)
     _json = json.loads(_json)
     return _json
 
@@ -93,8 +126,9 @@ def check_name_price(fp, name, price):
         else:
             #print('Parsed',fp,'\n',name, price)
             return True, None
-    except:
+    except Exception as e:
         # import pdb;pdb.set_trace()
+        return False, e
         pass
     return
 
@@ -105,6 +139,7 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
     _reval = kwargs['_reval']
     _multi = kwargs['_dict']['multi_size']
     _type = _reval[retailer]['_type']
+    handle_exceptions = kwargs['handle_exceptions']
     total_units_list = kwargs['_dict']['total_units'].split(',')
     name = None
     price = None
@@ -188,6 +223,7 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
              'product_name': product_name,
              '_reval': _reval[retailer],
             }
-        handleException(None,e=e, t=t, d=d, soup=soup, lines=lines)
+        if handle_exceptions:
+            handleException(None,e=e, t=t, d=d, soup=soup, lines=lines)
         return None, None
     return product_name, price

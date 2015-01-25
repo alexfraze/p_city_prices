@@ -5,11 +5,13 @@ from _reval import evalSettings
 print('Running...')
 
 class Start(object):
-    def __init__(self, Debug, yaml_file, data, status_errors):
+    def __init__(self, Debug, yaml_file, data, status_errors, handle_exceptions):
+        self.handle_exceptions = handle_exceptions
         self.yaml_file = self.returnYamlDict(yaml_file)
         self.status_errors = status_errors
         self.data = data
         self.Debug = Debug
+        self.results = []
         self.config()
         self.run()
 
@@ -18,7 +20,7 @@ class Start(object):
         '''
         # define this to skip parsing
         # used to skip retailers
-        self.skip_list = ['hardrhino']#'peaknootropics','nootropicscity','liftmode', 'smartpowders',
+        self.skip_list = []#'hardrhino']#'peaknootropics','nootropicscity','liftmode', 'smartpowders',
                           #'newmind','newstarnootropics','powdercitysingle', 'powdercity',
                           #'bulksupplements','nootropicsdepot'] # ,'hardrhino'
                     
@@ -41,15 +43,16 @@ class Start(object):
 
     def run(self):
         Debug_err=[]
-        results = []
+        
         _reval = evalSettings()
         for retailer in _reval.keys():
             print("Parsing: {0}".format(retailer))
             name = None
             price = None
-            items = None
+            scraped = None
             # retailer in self.skip_list?
             if retailer in self.skip_list:
+                print("#\n#### RETAILER IN SKIP LIST #\n{0}\n#############\n#".format(retailer))
                 continue
             dp = os.path.join(self.download_dir, retailer)
             for fn in os.listdir(dp):
@@ -65,8 +68,20 @@ class Start(object):
                     continue
                 _multi = self.data[retailer][product_name]['multi_size']
                 _dict = self.data[retailer][product_name]
-                items = returnItemInfoFromSite(fp,retailer=retailer, _reval=_reval,_multi=_multi, _dict=_dict)
-                results.append([retailer, product_name, name, price, items, self.data[retailer][product_name]])
+
+                scraped = returnItemInfoFromSite(fp,
+                                               retailer=retailer,
+                                               _reval=_reval,
+                                               _multi=_multi,
+                                               _dict=_dict,
+                                               handle_exceptions=self.handle_exceptions)
+
+                self.results.append({'retailer':retailer,
+                                    'product_name': product_name,
+                                    'name': name,
+                                    'price': price,
+                                    'scraped': scraped,
+                                    'csv_info': self.data[retailer][product_name]})
                 if self.Debug:
                     size = os.stat(fp).st_size
                     debug_dict = {
@@ -77,10 +92,9 @@ class Start(object):
                         "fp_size": size,
                         "_multi": _multi,
                         "_dict": _dict,
-                        "items": items,
+                        "scraped": scraped,
                     }
                     self.debugInfo(debug_dict=debug_dict)
-        import pdb;pdb.set_trace()
 
                     
 if __name__=="__main__":
