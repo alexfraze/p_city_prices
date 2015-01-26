@@ -150,7 +150,17 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
     price = None
     soup = None
     lines = None
-    #import pdb;pdb.set_trace()
+    return_dict = {'scraped_units': '', #str split
+                  'unit_of_measure': '',
+                  'smulti_prices': '',
+                  'product_name': '',
+                  'price': '',
+                  'leadsplit': '',
+                  'endsplit': '',
+                  '_type': '',
+                  'scraped_name':'',
+                  'scraped_price':'',
+                  }
     try:
         if retailer is 'bulksupplements':
             # import pdb;pdb.set_trace()
@@ -174,9 +184,8 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
             _r, _e = check_name_price(fp,product_name,price)
             if not _r:
                 raise Exception(_e)
-
-            return {"scraped_name": product_name, "scraped_price":price}
-
+            return_dict.update({"scraped_name": product_name, "scraped_price":price})
+            return return_dict
         if _type is 'bs4':
             # import pdb;pdb.set_trace()
             lines = readFile(fp)
@@ -190,9 +199,9 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
                         if len(units) is not len(prices):
                             raise Exception("[ERROR] Total units listed are not equal to the prices scraped")
                     product_name = eval(_reval[retailer]['product_name'])
-                    return_dict = {"units": units,
+                    return_dict.update({"scraped_units": units,
                                    "unit_of_measure":unit_of_measure,
-                                   "prices": prices}
+                                   "smulti_prices": prices})
                     return return_dict
                 except Exception as e:
                     raise e
@@ -205,14 +214,8 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
                 _r, _e = check_name_price(fp,product_name,price)
                 if not _r:
                     raise Exception(_e)
-                return {"scraped_name": product_name, "scraped_price":price}
-        elif _type is 'strsplit':
-            startsplit = _reval[retailer]['startsplit']
-            endsplit =   _reval[retailer]['endsplit']
-            # import pdb;pdb.set_trace()
-        elif _type is 'json':
-            # import pdb;pdb.set_trace()
-            pass
+                return_dict.update({"scraped_name": product_name, "scraped_price":price})
+                return return_dict
         check_name_price(fp,product_name,price)
     except Exception as e:
         import traceback
@@ -231,5 +234,7 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
             }
         if handle_exceptions:
             handleException(None,e=e, t=t, d=d, soup=soup, lines=lines)
-        return {"scraped_name": product_name, "scraped_price":price}
-    return {"scraped_name": product_name, "scraped_price":price}
+        return_dict.update({"scraped_name": product_name, "scraped_price":price})
+        return return_dict
+    return_dict.update({"scraped_name": product_name, "scraped_price":price})
+    return return_dict
