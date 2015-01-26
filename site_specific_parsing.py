@@ -165,7 +165,8 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
                             price = _json['childProducts'][_id]
                             product_id = _id # not used
                             check_name_price(fp,name,price)
-                            items.append([name,price])
+                            items.append({"scraped_name": name,
+                                          "scraped_price":price})
             return items
         if (retailer is 'hardrhino') or (retailer is 'nootropicsdepot'):
             _json = returnJsonFromJsonDumpFile(fp)
@@ -173,7 +174,9 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
             _r, _e = check_name_price(fp,product_name,price)
             if not _r:
                 raise Exception(_e)
-            return product_name, price
+
+            return {"scraped_name": product_name, "scraped_price":price}
+
         if _type is 'bs4':
             # import pdb;pdb.set_trace()
             lines = readFile(fp)
@@ -187,7 +190,10 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
                         if len(units) is not len(prices):
                             raise Exception("[ERROR] Total units listed are not equal to the prices scraped")
                     product_name = eval(_reval[retailer]['product_name'])
-                    return units, unit_of_measure, prices
+                    return_dict = {"units": units,
+                                   "unit_of_measure":unit_of_measure,
+                                   "prices": prices}
+                    return return_dict
                 except Exception as e:
                     raise e
             else:
@@ -199,7 +205,7 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
                 _r, _e = check_name_price(fp,product_name,price)
                 if not _r:
                     raise Exception(_e)
-                return product_name, price
+                return {"scraped_name": product_name, "scraped_price":price}
         elif _type is 'strsplit':
             startsplit = _reval[retailer]['startsplit']
             endsplit =   _reval[retailer]['endsplit']
@@ -225,5 +231,5 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
             }
         if handle_exceptions:
             handleException(None,e=e, t=t, d=d, soup=soup, lines=lines)
-        return product_name, prices
-    return product_name, price
+        return {"scraped_name": product_name, "scraped_price":price}
+    return {"scraped_name": product_name, "scraped_price":price}

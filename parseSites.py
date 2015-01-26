@@ -74,6 +74,7 @@ class Start(object):
                 _multi = self.data[retailer][product_name]['multi_size']
                 _dict = self.data[retailer][product_name]
 
+                # returns a dictionary with scraped info
                 scraped = returnItemInfoFromSite(fp,
                                                retailer=retailer,
                                                _reval=_reval,
