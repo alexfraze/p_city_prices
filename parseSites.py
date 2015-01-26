@@ -20,9 +20,14 @@ class Start(object):
         '''
         # define this to skip parsing
         # used to skip retailers
-        self.skip_list = []#'hardrhino']#'peaknootropics','nootropicscity','liftmode', 'smartpowders',
-                          #'newmind','newstarnootropics','powdercitysingle', 'powdercity',
-                          #'bulksupplements','nootropicsdepot'] # ,'hardrhino'
+      # 'hardrhino','peaknootropics','nootropicscity','liftmode', 'smartpowders',
+      # 'newmind','newstarnootropics','powdercitysingle', 'powdercity',
+      # 'bulksupplements','nootropicsdepot'
+        self.skip_list = []
+      # 'hardrhino','peaknootropics','nootropicscity','liftmode', 'smartpowders',
+      # 'newmind','newstarnootropics','powdercitysingle', 'powdercity',
+      # 'bulksupplements','nootropicsdepot'
+      #   ] #
                     
         self.txt_dir = os.getcwd()
         self.download_dir = os.getcwd() # retailer_name/downloaded_pages
@@ -89,6 +94,7 @@ class Start(object):
                         "fn": fn,
                         "dp": dp,
                         "retailer": retailer,
+                        "_reval": _reval[retailer],
                         "fp_size": size,
                         "_multi": _multi,
                         "_dict": _dict,

@@ -225,5 +225,5 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
             }
         if handle_exceptions:
             handleException(None,e=e, t=t, d=d, soup=soup, lines=lines)
-        return None, None
+        return product_name, prices
     return product_name, price

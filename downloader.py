@@ -192,7 +192,11 @@ def run():
     # '.25, .5, 1, 2, 5, 10, 20'
     # (Pdb) items.results[0]['scraped']
     # ([' ¼ gram (250mg) Coluracetam', ' ½ gram (500mg) Coluracetam', ' 1 gram Coluracetam', ' 2 grams Coluracetam', ' 5 grams Coluracetam', ' 10 grams Coluracetam', ' 20 grams Coluracetam'], 'gram', ['$13.80', '$18', '$24', '$44', '$88', '$139', '$249'])
-
+    results_okay = []
+    results_wrong = []
+    # for idx, item in enumerate(items.results):
+    #     results_okay.update({idx:item})
+    # import pdb;pdb.set_trace()
     for item in items.results:
         print("Do these units match?")
         print(item['csv_info']['total_units'],item['csv_info']['unit_size'])
@@ -204,10 +208,22 @@ def run():
         r = input("Input: ")
         if "pdb" in r:
             go_pdb(item)
-        elif "y" in r:
-            print('good')
-        elif "n" in r:
-            print('uhoh')
+        elif "0" in r:
+            results_wrong.append(item)
+        else:
+            results_okay.append(item)
+    with open('okay','w+') as f:
+        import json
+        json.dump(results_okay,f)
+    with open('wrong','w+') as f:
+        import json
+        json.dump(results_wrong,f)
+    import pdb;pdb.set_trace()
+
+# (Pdb) import pickle
+# (Pdb) pickle.dump(results_okay, open('okay.p', 'wb'))
+# (Pdb) pickle.dump(results_wrong, open('wrong.p', 'wb'))
+
 
 if __name__=="__main__":
     run()
