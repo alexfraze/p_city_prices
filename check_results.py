@@ -109,23 +109,28 @@ def cleanMultiPrices(item):
         new.append(float(p))
     item['scraped']['smulti_prices'] = sorted(new)
 
-        
+def checkInternalSku(_it):
+    _it = item['csv_info']['internal_sku']
+    
+    for x in price_chart:
+        for y in x:
+            #print(y)
+            if _it in y:
+                return True
+    return False        
 
 def run(items, *args, **kwargs):
     results_okay = []
     results_wrong = []
     _file = './current_products.json'
-    s = None
-
-    try:
+    if os.path.exists(_f):
         s = (time.time() - os.stat(_file).st_mtime ) / 60 
-    except Exception as e:
-        import traceback;print(traceback.format_exc())
-        print(e)
+    else:
         current_products = getAllProductDict()
         with open(_file,'w+') as f:
             json.dump(current_products,f)
-        pass
+        s = (time.time() - os.stat(_file).st_mtime ) / 60 
+
     try:
         if s < 30:
             with open(_file, 'r') as f:
@@ -146,30 +151,25 @@ def run(items, *args, **kwargs):
         x = sorted(x, key=itemgetter(2))
         price_chart.append(x)
     for item in items:
-        #print("Do these units match?")
-        if check_key(item['scraped'], 'scraped_units'):
-            print('\n'+item['csv_info']['internal_sku'])
-            guessAndUpdateUnits(item)
-            cleanMultiPrices(item)
-            if len(item['scraped']['smulti_prices']) is len(item['scraped']['scraped_units']):
-                for i, x in enumerate(item['scraped']['smulti_prices']):
-                    print(float(item['scraped']['smulti_prices'][i])/float(item['scraped']['scraped_units'][i]))
-            else:
-                results_wrong.append(item)
-            pass
-        elif check_key(item['scraped'], 'scraped_price'):
-            print('\n'+item['csv_info']['internal_sku'])
-            print(returnEstimate(item))
-            p_d(item, 1)
-            import pdb;pdb.set_trace()
-            pass
         _it = item['csv_info']['internal_sku']
-        print(_it)
-        for x in price_chart:
-            for y in x:
-                #print(y)
-                if _it in y:
-                    print(y)
+        sku_exists = checkInternalSku(_it)
+        if sku_exists:
+            if check_key(item['scraped'], 'scraped_units'):
+                print('\n'+item['csv_info']['internal_sku'])
+                guessAndUpdateUnits(item)
+                cleanMultiPrices(item)
+                if len(item['scraped']['smulti_prices']) is len(item['scraped']['scraped_units']):
+                    for i, x in enumerate(item['scraped']['smulti_prices']):
+                        print(float(item['scraped']['smulti_prices'][i])/float(item['scraped']['scraped_units'][i]))
+                else:
+                    results_wrong.append(item)
+                pass
+            elif check_key(item['scraped'], 'scraped_price'):
+                print('\n'+item['csv_info']['internal_sku'])
+                print(returnEstimate(item))
+                p_d(item, 1)
+                pass
+
     print(results_wrong)
 
     #inputChoice(item)
