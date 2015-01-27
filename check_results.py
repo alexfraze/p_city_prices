@@ -52,7 +52,7 @@ def check_key(item, key):
         return False
 
 def returnEstimate(item):
-    '''asdf
+    '''
     '''
     p = item['scraped']['scraped_price']
     d = [' ', '$']
@@ -109,21 +109,24 @@ def cleanMultiPrices(item):
         new.append(float(p))
     item['scraped']['smulti_prices'] = sorted(new)
 
-def checkInternalSku(_it):
-    _it = item['csv_info']['internal_sku']
-    
+def checkInternalSku(_it,price_chart):
+    '''_it = item['csv_info']['internal_sku']
+    '''
+    possible_matches = []
     for x in price_chart:
         for y in x:
             #print(y)
             if _it in y:
-                return True
-    return False        
+                possible_matches.append(y)
+    if len(possible_matches) > 0:
+        return True, possible_matches
+    return False, None
 
 def run(items, *args, **kwargs):
     results_okay = []
     results_wrong = []
     _file = './current_products.json'
-    if os.path.exists(_f):
+    if os.path.exists(_file):
         s = (time.time() - os.stat(_file).st_mtime ) / 60 
     else:
         current_products = getAllProductDict()
@@ -150,27 +153,35 @@ def run(items, *args, **kwargs):
         x = [[x['sku'].split('-')[0],x['sku'],x['grams'],x['price'],p] for x in current_products[p]['variants']]
         x = sorted(x, key=itemgetter(2))
         price_chart.append(x)
+
+
     for item in items:
         _it = item['csv_info']['internal_sku']
-        sku_exists = checkInternalSku(_it)
+        sku_exists, possible_matches = checkInternalSku(_it,price_chart)
         if sku_exists:
             if check_key(item['scraped'], 'scraped_units'):
                 print('\n'+item['csv_info']['internal_sku'])
                 guessAndUpdateUnits(item)
-                cleanMultiPrices(item)
+                cleanMultiPrices(item) # removes spaces $
+                # if scraped prices and units match calculate the estimated price
                 if len(item['scraped']['smulti_prices']) is len(item['scraped']['scraped_units']):
                     for i, x in enumerate(item['scraped']['smulti_prices']):
                         print(float(item['scraped']['smulti_prices'][i])/float(item['scraped']['scraped_units'][i]))
+                    results_okay.append(item)
+                    p_d(item,1)
+                    print(possible_matches)
                 else:
                     results_wrong.append(item)
-                pass
+                continue
             elif check_key(item['scraped'], 'scraped_price'):
                 print('\n'+item['csv_info']['internal_sku'])
                 print(returnEstimate(item))
                 p_d(item, 1)
+                print(possible_matches)
                 pass
-
-    print(results_wrong)
+        else: # sku doesnt exist on shopify
+            results_wrong.append(item)
+    print(len(results_wrong))
 
     #inputChoice(item)
 
