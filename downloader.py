@@ -186,7 +186,7 @@ def run():
         import json
         json.dump(items.results,f)
     import check_results
-    check_results.run(items.results)
+    check_results.run(items.results, None)
 
 if __name__=="__main__":
     run()

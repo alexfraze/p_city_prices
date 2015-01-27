@@ -144,16 +144,16 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
     name = None
     price = None
     units = None
-    unit_of_measure = None
+    s_unit_of_measure = None
     prices = None
-    product_name = None
+    s_product_name = None
     price = None
     soup = None
     lines = None
     return_dict = {'scraped_units': '', #str split
-                  'unit_of_measure': '',
+                  's_unit_of_measure': '',
                   'smulti_prices': '',
-                  'product_name': '',
+                  's_product_name': '',
                   'price': '',
                   'leadsplit': '',
                   'endsplit': '',
@@ -180,11 +180,11 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
             return items
         if (retailer is 'hardrhino') or (retailer is 'nootropicsdepot'):
             _json = returnJsonFromJsonDumpFile(fp)
-            product_name, price = returnItemInfoFromJson(_json, fp=fp)
-            _r, _e = check_name_price(fp,product_name,price)
+            s_product_name, price = returnItemInfoFromJson(_json, fp=fp)
+            _r, _e = check_name_price(fp,s_product_name,price)
             if not _r:
                 raise Exception(_e)
-            return_dict.update({"scraped_name": product_name, "scraped_price":price})
+            return_dict.update({"scraped_name": s_product_name, "scraped_price":price})
             return return_dict
         if _type is 'bs4':
             # import pdb;pdb.set_trace()
@@ -193,30 +193,30 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
             if 'True' in _multi:
                 try:
                     units = eval(_reval[retailer]['units']) # Units
-                    unit_of_measure = eval(_reval[retailer]['unit_of_measure']) # Unit of Measure
+                    s_unit_of_measure = eval(_reval[retailer]['unit_of_measure']) # Unit of Measure
                     prices = eval(_reval[retailer]['prices']) #prices
                     if len(prices) is not len(total_units_list):
                         if len(units) is not len(prices):
                             raise Exception("[ERROR] Total units listed are not equal to the prices scraped")
-                    product_name = eval(_reval[retailer]['product_name'])
+                    s_product_name = eval(_reval[retailer]['product_name'])
                     return_dict.update({"scraped_units": units,
-                                   "unit_of_measure":unit_of_measure,
+                                   "s_unit_of_measure":s_unit_of_measure,
                                    "smulti_prices": prices})
                     return return_dict
                 except Exception as e:
                     raise e
             else:
                 try:
-                    product_name = eval(_reval[retailer]['product_name'])
+                    s_product_name = eval(_reval[retailer]['product_name'])
                     price = eval(_reval[retailer]['price'])
                 except Exception as e:
                     raise e
-                _r, _e = check_name_price(fp,product_name,price)
+                _r, _e = check_name_price(fp,s_product_name,price)
                 if not _r:
                     raise Exception(_e)
-                return_dict.update({"scraped_name": product_name, "scraped_price":price})
+                return_dict.update({"scraped_name": s_product_name, "scraped_price":price})
                 return return_dict
-        check_name_price(fp,product_name,price)
+        check_name_price(fp,s_product_name,price)
     except Exception as e:
         import traceback
         t = traceback.format_exc()
@@ -227,14 +227,14 @@ def returnItemInfoFromSite(fp, *args, **kwargs):
              'name': name,
              'price': price,
              'units': units,
-             'unit_of_measure': unit_of_measure,
+             's_unit_of_measure': s_unit_of_measure,
              'prices': prices,
-             'product_name': product_name,
+             's_product_name': s_product_name,
              '_reval': _reval[retailer],
             }
         if handle_exceptions:
             handleException(None,e=e, t=t, d=d, soup=soup, lines=lines)
-        return_dict.update({"scraped_name": product_name, "scraped_price":price})
+        return_dict.update({"scraped_name": s_product_name, "scraped_price":price})
         return return_dict
-    return_dict.update({"scraped_name": product_name, "scraped_price":price})
+    return_dict.update({"scraped_name": s_product_name, "scraped_price":price})
     return return_dict
