@@ -17,6 +17,8 @@ setup(name='Product Scraper',
 			"html5lib>=0.999",
 			"six>=1.8.0",
 			"urllib3>=1.9.1",
+                        "ShopifyAPI>=2.1.0",
       ],
+      dependency_links = ['https://github.com/Shopify/shopify_python_api/tarball/master#egg=shopify'],
      )
 
