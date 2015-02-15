@@ -17,6 +17,9 @@ def csvtoyaml(in_f, out_f):
         lines = f.read().split('\n')
         lines = [line.split("\t") for line in lines]
     header = lines[0]
+    ##########
+    # REQUIERD HEADERS (case sensitive) for productcsv
+    ##########
     retailer = header.index('retailer')
     url = header.index('url')
     product = header.index('product')
@@ -104,15 +107,18 @@ def downloadurls(data):
             thread_list.append(retailer_dict)
         results = run_parallel_in_threads(fetch, thread_list)
         return results
-    user_agent = {'user-agent': 'Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0'}
-    http = urllib3.PoolManager(500, headers=user_agent) # 500 connections might be too little if more products are scraped
+    user_agent = {'user-agent': 'Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0'} #TODO: alternate these?
+    http = urllib3.PoolManager(500, headers=user_agent) # 500 connections might be too little if more products are scraped #TODO: fill fewer connections because of bandwidth and reuse
     # put the queues in results
     results = []
     for retailer in data.keys():
         products = data[retailer]
-        downloaded = grabproducts(data, retailer, products)
+        downloaded = grabproducts(data, retailer, products) #TODO: pop 1 from each retailer and add to queue instead of adding all of one retailer urls to the queue
         results.append(downloaded)
     page_status_errors = []
+    ######################
+    # enumerate the downloaded retailer queue, check status and pull data
+    ######################
     for rq_i, retailer_q in enumerate(results):
         for product_q in results[rq_i].queue:
             retailer_name = product_q[0]
@@ -127,7 +133,7 @@ def downloadurls(data):
             with open(os.path.join(directory, fn),'wb') as f:
                 f.write(data)
             print("Fetched: %s from %s Status: %s" % (product_name, retailer, status))
-            if status is not 200: # aka 404 or 50X
+            if status is not 200: # aka 404 or 50X #TODO: handle 503s 
                 page_status_errors.append([{'status':status,'_url':_url,'retailer_name':retailer_name,'product_name':product_name}])
     if len(page_status_errors) > 0:
         print("\n#########\n")
@@ -170,7 +176,7 @@ def run():
     data = readyml(yml_file)
     if args.force_download:
         print("Beginning Download Process...")
-        downloadurls(data) #TODO: add getmtime check for files and skip if less than, or add flag to force
+        downloadurls(data) #TODO: add getmtime check for files and skip if less than, or add flag to force if download interrupted, or rerun from 503s? handle 503s
     from parseSites import Start
     Debug = args.Debug
     print("Starting Site Parsing...")
